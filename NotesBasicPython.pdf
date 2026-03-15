@@ -1,0 +1,79 @@
+Basic Program in Python
+
+1. Print the message "Hello World" on the screen?
+step 1. Understand the program
+We only need to display a message.
+Step 2. Algorithm solution
+01. Start
+02. Print "Hello World"
+03. End 
+Step 3. Python Code
+print("Hello World")
+
+2. Find the sum of two numbers entered by the user?
+step 1. Understand the program.
+We need atwo numbers and we must add them.
+step 2. Algorithm solution.
+01. Start 
+02. Take first number
+03. Take second number
+04. Add both numbers
+05.Print the result
+06. End 
+Step 3. Pyhton Code 
+a  = int(input("Enter first number"))
+b = int(input("Enter second number"))
+sum = a + b
+print("Sum is:", sum)
+
+3. Find the square of a number?
+step 1. Understand the program.
+We need a number and multily it by itself.
+step 2. Algorithm solution.
+01. Start
+02. multiply the number by itself
+03. Print the result
+04. End
+step 3. Python Code 
+num = int(input("Enter a number"))
+square = num* num
+print("Square is:", num)
+
+4. Calculate the Area of a Circle?
+Formula: Area = pi x r^2
+step 1. Understand the program.
+We need the radius of the circle.
+step 2. Algorithm solution.
+01. Start
+02. Take radius
+03. Calculate area using formula
+04. Print the result
+05 End
+step 3. Python Code
+radius = float(input("Enter radius: "))
+area = 3.14 * radius * radius
+print("Area of circle: ", area) 
+
+5. Swap the values of two numbers.
+Example
+a = 5
+b = 10
+After swap
+a = 10
+b = 5
+step 1. Understand program
+We need to exchange the values of two variables.
+step 2. Algorithm solution.
+01. Start
+02. Take first number
+03. Take second number
+04. Swap the numbers
+05. Print swapped numbers
+06. End
+Step 3. Python Code 
+a = int(input("Enter first number"))
+b = int(input("Enter second number"))
+a,b = b,a
+print("After swapping")
+print("a =", a)
+print("b =",b)
