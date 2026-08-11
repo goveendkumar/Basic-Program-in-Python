@@ -467,3 +467,87 @@ class ThreeGunasWidget extends StatelessWidget {
     );
   }
 }
+
+// --- APP BRANDING LOGO: "SANATAN PATH" ---
+// Beautiful 3D Glowing Om inside deep maroon circle with gold mandala background
+class OmLogoPainter extends CustomPainter {
+  final double animationValue; // to support pulse/glow scale animation
+
+  OmLogoPainter({this.animationValue = 1.0});
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    final center = Offset(size.width / 2, size.height / 2);
+    final radius = min(size.width, size.height) / 2;
+
+    // 1. Draw Deep Maroon (#8B1A1A) Background Circle
+    final baseCirclePaint = Paint()
+      ..color = const Color(0xFF8B1A1A)
+      ..style = PaintingStyle.fill;
+    canvas.drawCircle(center, radius, baseCirclePaint);
+
+    // 2. Draw Subtle Gold Mandala Pattern (8 petals)
+    final mandalaPaint = Paint()
+      ..color = const Color(0xFFD4AF37).withOpacity(0.35)
+      ..style = PaintingStyle.stroke
+      ..strokeWidth = 1.5;
+
+    for (int i = 0; i < 8; i++) {
+      final angle = (i * 2 * pi) / 8;
+      final petalCenter = Offset(
+        center.dx + (radius * 0.45) * cos(angle),
+        center.dy + (radius * 0.45) * sin(angle),
+      );
+      canvas.drawCircle(petalCenter, radius * 0.35, mandalaPaint);
+    }
+
+    // Outer mandala dotted boundary
+    final outerRingPaint = Paint()
+      ..color = const Color(0xFFD4AF37).withOpacity(0.5)
+      ..style = PaintingStyle.stroke
+      ..strokeWidth = 2;
+    canvas.drawCircle(center, radius * 0.9, outerRingPaint);
+
+    // 3. Draw 3D Glowing Gold Gradient for Om symbol text
+    final textPainter = TextPainter(textDirection: TextDirection.ltr);
+    final pulseScale = 1.0 + (0.05 * sin(animationValue * 2 * pi));
+
+    textPainter.text = TextSpan(
+      text: 'ॐ',
+      style: TextStyle(
+        fontSize: radius * 1.1 * pulseScale,
+        fontWeight: FontWeight.bold,
+        foreground: Paint()
+          ..shader = const LinearGradient(
+            colors: [Color(0xFFD4AF37), Color(0xFFFFD700)],
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+          ).createShader(Rect.fromCircle(center: center, radius: radius * 0.5))
+          ..maskFilter = MaskFilter.blur(BlurStyle.solid, 1.5 * pulseScale),
+        shadows: [
+          Shadow(
+            color: const Color(0xFFFFD700).withOpacity(0.8),
+            blurRadius: 15 * pulseScale,
+            offset: const Offset(0, 0),
+          ),
+          const Shadow(
+            color: Colors.black45,
+            blurRadius: 4,
+            offset: Offset(2, 2),
+          ),
+        ],
+      ),
+    );
+
+    textPainter.layout();
+    textPainter.paint(
+      canvas,
+      Offset(center.dx - textPainter.width / 2, center.dy - textPainter.height / 2.05),
+    );
+  }
+
+  @override
+  bool shouldRepaint(covariant OmLogoPainter oldDelegate) {
+    return oldDelegate.animationValue != animationValue;
+  }
+}

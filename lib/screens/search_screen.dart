@@ -20,6 +20,7 @@ class _SearchScreenState extends State<SearchScreen> {
   Widget build(BuildContext context) {
     final appState = Provider.of<AppState>(context);
     final isDark = appState.settings.isDarkMode;
+    final lang = appState.settings.language;
 
     // Search results compilation
     final List<Map<String, dynamic>> results = [];
@@ -29,14 +30,14 @@ class _SearchScreenState extends State<SearchScreen> {
 
       // Search Lessons
       for (var l in ContentDatabase.lessons) {
-        if (l.title.toLowerCase().contains(qLower) ||
-            l.englishContent.toLowerCase().contains(qLower) ||
+        if (l.getLocalizedTitle(lang).toLowerCase().contains(qLower) ||
+            l.getLocalizedContent(lang).toLowerCase().contains(qLower) ||
             l.category.toLowerCase().contains(qLower)) {
           results.add({
             'type': 'Lesson',
-            'title': l.title,
+            'title': l.getLocalizedTitle(lang),
             'category': l.category,
-            'desc': l.simpleExplanation,
+            'desc': l.getLocalizedSimpleExplanation(lang),
             'icon': '🕉️',
             'lesson': l,
           });
@@ -45,12 +46,13 @@ class _SearchScreenState extends State<SearchScreen> {
 
       // Search Gita Chapters
       for (var ch in ContentDatabase.gitaChapters) {
+        final chTitle = (ch['titleTranslations'] as Map<String, String>)[lang] ?? ch['sanskritName'] as String;
         if (ch['sanskritName'].toString().toLowerCase().contains(qLower) ||
-            ch['englishTitle'].toString().toLowerCase().contains(qLower) ||
+            chTitle.toLowerCase().contains(qLower) ||
             ch['englishExplanation'].toString().toLowerCase().contains(qLower)) {
           results.add({
             'type': 'Gita Chapter',
-            'title': '${ch['number']}. ${ch['sanskritName']}',
+            'title': '${ch['number']}. $chTitle',
             'category': 'Bhagavad Gita',
             'desc': ch['englishTitle'],
             'icon': '☸️',
@@ -75,10 +77,10 @@ class _SearchScreenState extends State<SearchScreen> {
     }
 
     return Scaffold(
-      backgroundColor: isDark ? Colors.grey.shade900 : Colors.amber.shade50.withOpacity(0.3),
+      backgroundColor: isDark ? const Color(0xFF1E1E1E) : const Color(0xFFFFF9F0),
       appBar: AppBar(
         title: const Text('Global Search 🔍'),
-        backgroundColor: Colors.orange.shade800,
+        backgroundColor: const Color(0xFF8B1A1A), // Deep Maroon
       ),
       body: Column(
         children: [
@@ -93,7 +95,7 @@ class _SearchScreenState extends State<SearchScreen> {
               },
               decoration: InputDecoration(
                 hintText: 'Search concepts, scriptures, chapters, deities...',
-                prefixIcon: const Icon(Icons.search, color: Colors.orange),
+                prefixIcon: const Icon(Icons.search, color: Color(0xFFFF6B00)),
                 border: OutlineInputBorder(borderRadius: BorderRadius.circular(12)),
                 filled: true,
                 fillColor: isDark ? Colors.grey.shade800 : Colors.white,
@@ -128,12 +130,12 @@ class _SearchScreenState extends State<SearchScreen> {
                                   Container(
                                     padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
                                     decoration: BoxDecoration(
-                                      color: Colors.orange.shade100,
+                                      color: const Color(0xFFFF6B00).withOpacity(0.1),
                                       borderRadius: BorderRadius.circular(8),
                                     ),
                                     child: Text(
                                       res['type'] as String,
-                                      style: const TextStyle(fontSize: 8, fontWeight: FontWeight.bold, color: Colors.orange),
+                                      style: const TextStyle(fontSize: 8, fontWeight: FontWeight.bold, color: Color(0xFFFF6B00)),
                                     ),
                                   )
                                 ],
@@ -164,7 +166,7 @@ class _SearchScreenState extends State<SearchScreen> {
                                     );
                                   }
                                 },
-                                style: ElevatedButton.styleFrom(backgroundColor: Colors.orange),
+                                style: ElevatedButton.styleFrom(backgroundColor: const Color(0xFFFF6B00)),
                                 child: const Text('Open'),
                               ),
                             ),

@@ -11,17 +11,43 @@ class ContentDatabase {
       level: 'Beginner',
       imageUrl: 'OM_SYMBOL',
       imageCaption: 'The sacred Pranava symbol "Om" representing the cosmic vibration of Brahman.',
-      englishContent: 'Hindu Dharma, known traditionally as Sanatana Dharma, is one of the oldest living spiritual traditions. It is not just a religion with a single founder or strict dogma, but a rich family of philosophies, spiritual paths, values, and practices that guide individuals toward righteousness (Dharma) and ultimate spiritual liberation (Moksha).',
-      romanEnglishContent: 'Hindu Dharma ko traditional way mein Sanatana Dharma kaha jata hai. Yeh koi simple religion nahi hai jise kisi single founder ne banaya ho. Yeh ek dynamic family of philosophies, spiritual paths aur dynamic practices hai jo life ko righteousness (Dharma) aur liberation (Moksha) ki taraf guide karti hai.',
-      simpleExplanation: 'Hindu Dharma is a spiritual way of life focusing on cosmic harmony, duty, and spiritual liberation.',
-      example: 'Just like many rivers lead to the same ocean, different paths (Yogas) in Hindu Dharma lead to the same ultimate truth.',
+      titleTranslations: {
+        'English': 'What is Hindu Dharma?',
+        'Roman English': 'Hindu Dharma kya hai?',
+        'Urdu': 'ہندو دھرم کیا ہے؟',
+        'Sindhi': 'هندو دھرم ڇا آهي؟'
+      },
+      contentTranslations: {
+        'English': 'Hindu Dharma, known traditionally as Sanatana Dharma, is one of the oldest living spiritual traditions. It is not just a religion with a single founder or strict dogma, but a rich family of philosophies, spiritual paths, values, and practices that guide individuals toward righteousness (Dharma) and ultimate spiritual liberation (Moksha).',
+        'Roman English': 'Hindu Dharma ko traditional way mein Sanatana Dharma kaha jata hai. Yeh koi simple religion nahi hai jise kisi single founder ne banaya ho. Yeh ek dynamic family of philosophies, spiritual paths aur dynamic practices hai jo life ko righteousness (Dharma) aur liberation (Moksha) ki taraf guide karti hai.',
+        'Urdu': 'ہندو دھرم، جسے روایتی طور پر سناتن دھرم کہا جاتا ہے، دنیا کے قدیم ترین روحانی سلسلوں میں سے ایک ہے۔ اس کا کوئی ایک بانی یا سخت عقیدہ نہیں ہے، بلکہ یہ فلسفے، سچائی اور نیک راستوں کا ایک خوبصورت مجموعہ ہے جو انسان کو نجات (موکش) کی طرف لے جاتا ہے۔',
+        'Sindhi': 'هندو دھرم، جنهن کي روايتي طور تي سناتن دھرم چيو ويندو آهي، دنيا جي قديم ترين روحاني روايتن مان هڪ آهي. ان جو ڪو هڪ باني ناهي، پر هي سچائي ۽ نيڪيءَ جو هڪ رستو آهي جيڪو انسان کي نجات (موڪش) ڏانهن وٺي وڃي ٿو.'
+      },
+      simpleExplanationTranslations: {
+        'English': 'Hindu Dharma is a spiritual way of life focusing on cosmic harmony, duty, and spiritual liberation.',
+        'Roman English': 'Hindu Dharma ek spiritual lifestyle hai jo duty aur liberation par focus karta hai.',
+        'Urdu': 'ہندو دھرم زندگی گزارنے کا ایک روحانی طریقہ ہے جو اچھے کاموں، فرض اور روح کی آزادی پر مرکوز ہے۔',
+        'Sindhi': 'هندو دھرم زندگي گذارڻ جو هڪ روحاني طريقو آهي جيڪو نيڪي، فرض ۽ روح جي آزاديءَ تي ٻڌل آهي.'
+      },
+      exampleTranslations: {
+        'English': 'Just like many rivers lead to the same ocean, different paths (Yogas) in Hindu Dharma lead to the same ultimate truth.',
+        'Roman English': 'Jaise bohot si nadiyaan ek hi ocean mein milti hain, waise hi alag-alag paths (Yogas) ek hi truth tak pahunchate hain.',
+        'Urdu': 'جس طرح بہت سے دریا ایک ہی سمندر میں جا کر ملتے ہیں، اسی طرح مختلف راستے (یوگا) ایک ہی سچائی تک پہنچاتے ہیں۔',
+        'Sindhi': 'جيئن گهڻيون نديون هڪ ئي سمنڊ ۾ وڃي ملن ٿيون، تيئن مختلف رستا (يوگا) هڪ ئي سچائيءَ تائين پهچائين ٿا.'
+      },
+      deeperExplanationTranslations: {
+        'English': 'In Hindu Dharma, the universe is seen as governed by cosmic order. Truth is infinite and can be realized through multiple spiritual approaches (such as Bhakti, Jnana, Karma, or Raja Yoga). It emphasizes personal spiritual experience, self-realization, and treating all life forms with respect.',
+        'Roman English': 'Isme bataya jata hai ki universe ek cosmic law se chalta hai. Sachaai bohot badi hai aur isse alag tareeqon se paya ja sakta hai. Yeh sabhi living beings ki respect karne par zor deta hai.',
+        'Urdu': 'ہندو دھرم میں کائنات کو ایک الہی قانون کے تحت چلتے ہوئے دیکھا جاتا ہے۔ سچائی لامحدود ہے اور اسے مختلف روحانی طریقوں (جیسے بھکتی، گیان یا کرما) سے حاصل کیا جا سکتا ہے۔ یہ تمام جانداروں کا احترام کرنے پر زور دیتا ہے۔',
+        'Sindhi': 'هندو دھرم ۾ ڪائنات کي هڪ الاهي قانون جي تحت هلندي ڏٺو وڃي ٿو. سچائي لامحدود آهي ۽ ان کي مختلف روحاني طريقن سان حاصل ڪري سگهجي ٿو. هي تمام ساهوارن جي احترام تي زور ڏئي ٿو.'
+      },
+      keyPointsTranslations: {
+        'English': ['Hindu Dharma has no single historical founder.', 'It is also called Sanatana Dharma (Eternal Way).', 'It offers multiple spiritual paths tailored to diverse human temperaments.'],
+        'Roman English': ['Dharma ka koi single founder nahi hai.', 'Isko Sanatana Dharma (timeless path) bhi kehte hain.', 'Yeh sab ke liye unke nature ke hisab se raste batata hai.'],
+        'Urdu': ['ہندو دھرم کا کوئی ایک بانی نہیں ہے۔', 'اسے سناتن دھرم (ہمیشہ رہنے والا راستہ) بھی کہتے ہیں۔', 'یہ ہر انسان کے مزاج کے مطابق مختلف روحانی راستے فراہم کرتا ہے۔'],
+        'Sindhi': ['هندو دھرم جو ڪو هڪ باني ناهي.', 'ان کي سناتن دھرم (هميشه رهندڙ رستو) به چيو ويندو آهي.', 'هي هر انسان جي مزاج مطابق مختلف روحاني رستا فراهم ڪري ٿو.']
+      },
       visualDiagramType: 'Dharma',
-      deeperExplanation: 'In Hindu Dharma, the universe is seen as governed by cosmic order. Truth is infinite and can be realized through multiple spiritual approaches (such as Bhakti, Jnana, Karma, or Raja Yoga). It emphasizes personal spiritual experience, self-realization, and treating all life forms with respect.',
-      keyPoints: [
-        'Hindu Dharma has no single historical founder.',
-        'It is also called Sanatana Dharma (Eternal Way).',
-        'It offers multiple spiritual paths tailored to diverse human temperaments.'
-      ],
       sources: ['Rig Veda 1.164.46 ("Ekam Sat Vipra Bahudha Vadanti")', 'Bhagavad Gita'],
       relatedTopics: ['Sanatana Dharma', 'Dharma', 'Karma'],
       quizQuestions: [
@@ -29,20 +55,30 @@ class ContentDatabase {
           id: 'q_what_is_dharma_1',
           category: 'Introduction',
           type: QuizType.multipleChoice,
-          question: 'What is the traditional Sanskrit name for Hindu Dharma?',
-          options: ['Sanatana Dharma', 'Bhakti Marg', 'Karma Siddhanta', 'Siddha Yoga'],
-          correctAnswer: 'Sanatana Dharma',
-          explanation: '"Sanatana Dharma" translates to the Eternal Way or Eternal Law, highlighting its ancient and timeless nature.',
-          difficulty: 'Beginner',
-        ),
-        QuizQuestion(
-          id: 'q_what_is_dharma_2',
-          category: 'Introduction',
-          type: QuizType.trueFalse,
-          question: 'Does Hindu Dharma have a single supreme human founder?',
-          options: ['True', 'False'],
-          correctAnswer: 'False',
-          explanation: 'Unlike many other religions, Hindu Dharma has no single human founder; it is a compilation of realizations of many ancient Rishis (sages).',
+          questionTranslations: {
+            'English': 'What is the traditional Sanskrit name for Hindu Dharma?',
+            'Roman English': 'Hindu Dharma ka traditional Sanskrit naam kya hai?',
+            'Urdu': 'ہندو دھرم کا روایتی سنسکرت نام کیا ہے؟',
+            'Sindhi': 'هندو دھرم جو روايتي سنسڪرت نالو ڇا آهي؟'
+          },
+          optionsTranslations: {
+            'English': ['Sanatana Dharma', 'Bhakti Marg', 'Karma Siddhanta', 'Siddha Yoga'],
+            'Roman English': ['Sanatana Dharma', 'Bhakti Marg', 'Karma Siddhanta', 'Siddha Yoga'],
+            'Urdu': ['سناتن دھرم', 'بھکتی مارگ', 'کرما سدھانت', 'سدھا یوگا'],
+            'Sindhi': ['سناتن دھرم', 'ڀڪتي مارڳ', 'ڪرم سڌانت', 'سڌا يوگا']
+          },
+          correctAnswerTranslations: {
+            'English': 'Sanatana Dharma',
+            'Roman English': 'Sanatana Dharma',
+            'Urdu': 'سناتن دھرم',
+            'Sindhi': 'سناتن دھرم'
+          },
+          explanationTranslations: {
+            'English': '"Sanatana Dharma" translates to the Eternal Way or Eternal Law, highlighting its ancient and timeless nature.',
+            'Roman English': '"Sanatana Dharma" ka matlab hai Eternal Way ya timeless law.',
+            'Urdu': '"سناتن دھرم" کا ترجمہ ہمیشہ رہنے والا راستہ یا ابدی قانون ہے، جو اس کی قدیم فطرت کو ظاہر کرتا ہے۔',
+            'Sindhi': '"سناتن دھرم" جو ترجمو هميشه رهندڙ رستو يا ابدي قانون آهي، جيڪو ان جي قديم هجڻ کي ظاهر ڪري ٿو.'
+          },
           difficulty: 'Beginner',
         )
       ],
@@ -51,10 +87,30 @@ class ContentDatabase {
           id: 'fc_intro_dharma_1',
           category: 'Introduction',
           imageUrl: 'OM_SYMBOL',
-          front: 'Sanatana Dharma',
-          back: 'The Eternal Order / Eternal Way',
-          explanation: 'The traditional Sanskrit name for Hindu Dharma, representing its timeless principles of cosmic righteousness and spiritual growth.',
-          example: 'Living truthfully and in harmony with nature is practicing Sanatana Dharma.',
+          frontTranslations: {
+            'English': 'Sanatana Dharma',
+            'Roman English': 'Sanatana Dharma',
+            'Urdu': 'سناتن دھرم',
+            'Sindhi': 'سناتن دھرم'
+          },
+          backTranslations: {
+            'English': 'The Eternal Order / Eternal Way',
+            'Roman English': 'Hamesha rehne wala rasta',
+            'Urdu': 'ابدی قانون / ہمیشہ رہنے والا راستہ',
+            'Sindhi': 'ابدي قانون / هميشه رهندڙ رستو'
+          },
+          explanationTranslations: {
+            'English': 'The traditional Sanskrit name for Hindu Dharma, representing its timeless principles of cosmic righteousness and spiritual growth.',
+            'Roman English': 'Hindu Dharma ka asli sanskrit naam jo hamesha rehne wale sach ko batata hai.',
+            'Urdu': 'ہندو دھرم کا روایتی نام، جو کائناتی سچائی اور اخلاقی اصولوں کی نمائندگی کرتا ہے۔',
+            'Sindhi': 'هندو دھرم جو روايتي نالو، جيڪو ڪائناتي سچائي ۽ اخلاقي اصولن جي نمائندگي ڪري ٿو.'
+          },
+          exampleTranslations: {
+            'English': 'Living truthfully and in harmony with nature is practicing Sanatana Dharma.',
+            'Roman English': 'Sach bolna aur nature ke sath prem se rehna Sanatana Dharma hai.',
+            'Urdu': 'سچائی کے ساتھ جینا اور قدرت کے ساتھ ہم آہنگی رکھنا سناتن دھرم کی مشق ہے۔',
+            'Sindhi': 'سچائيءَ سان جيئڻ ۽ قدرت سان هم آهنگي رکڻ سناتن دھرم آهي.'
+          },
           relatedConcept: 'Dharma',
         )
       ],
@@ -66,17 +122,43 @@ class ContentDatabase {
       level: 'Beginner',
       imageUrl: 'SUN_TEMPLE',
       imageCaption: 'The ancient Sun Temple, symbolizing the eternal light of Truth in Sanatana Dharma.',
-      englishContent: '"Sanatana" means eternal, timeless, or that which has no beginning or end. "Dharma" comes from the root word "dhri", meaning to uphold, support, or sustain. Together, Sanatana Dharma refers to the eternal cosmic laws and righteous principles that sustain the entire universe and all living beings.',
-      romanEnglishContent: '"Sanatana" ka matlab hai eternal ya timeless, jiska koi beginning ya end nahi hota. "Dharma" "dhri" root word se bana hai, jiska matlab hai sustain karna ya support karna. Is tarah, Sanatana Dharma wo eternal values hain jo poore universe ko sustain karti hain.',
-      simpleExplanation: 'Sanatana Dharma is the eternal natural law and moral order that sustains creation.',
-      example: 'Water flowing downwards, fire giving heat, and a human speaking truth are all examples of executing their natural Dharma.',
+      titleTranslations: {
+        'English': 'What is Sanatana Dharma?',
+        'Roman English': 'Sanatana Dharma kya hai?',
+        'Urdu': 'سناتن دھرم کیا ہے؟',
+        'Sindhi': 'سناتن دھرم ڇا آهي؟'
+      },
+      contentTranslations: {
+        'English': '"Sanatana" means eternal, timeless, or that which has no beginning or end. "Dharma" comes from the root word "dhri", meaning to uphold, support, or sustain. Together, Sanatana Dharma refers to the eternal cosmic laws and righteous principles that sustain the entire universe and all living beings.',
+        'Roman English': '"Sanatana" ka matlab hai eternal ya timeless, jiska koi beginning ya end nahi hota. "Dharma" "dhri" word se bana hai jiska matlab hai sustain karna. Sanatana Dharma wo values hain jo pure universe ko chalati hain.',
+        'Urdu': '"سناتن" کا مطلب ہے ابدی یا وہ جس کا کوئی آغاز یا انجام نہ ہو۔ "دھرم" کا مطلب ہے سنبھالنا یا سہارا دینا۔ سناتن دھرم ان ابدی اصولوں کو کہتے ہیں جو پوری کائنات کو توازن میں رکھتے ہیں۔',
+        'Sindhi': '"سناتن" جو مطلب آهي ابدي يا اهو جنهن جي ڪا شروعات يا پڄاڻي نه هجي. "دھرم" جو مطلب آهي سنڀالڻ يا سهارو ڏيڻ. سناتن دھرم انهن ابدي اصولن کي چيو ويندو آهي جيڪي سڄي ڪائنات کي توازن ۾ رکن ٿا.'
+      },
+      simpleExplanationTranslations: {
+        'English': 'Sanatana Dharma is the eternal natural law and moral order that sustains creation.',
+        'Roman English': 'Sanatana Dharma wo natural rules hain jo creation ko chalate hain.',
+        'Urdu': 'سناتن دھرم وہ ابدی قانون ہے جو کائنات کی تخلیق اور اخلاق کو قائم رکھتا ہے۔',
+        'Sindhi': 'سناتن دھرم اهو ابدي قانون آهي جيڪو ڪائنات جي تخليق ۽ اخلاق کي قائم رکي ٿو.'
+      },
+      exampleTranslations: {
+        'English': 'Water flowing downwards, fire giving heat, and a human speaking truth are all examples of executing their natural Dharma.',
+        'Roman English': 'Pani ka behna, aag ka garmi dena aur insaan ka sach bolna unka natural Dharma hai.',
+        'Urdu': 'پانی کا نیچے کی طرف بہنا، آگ کا گرمی دینا، اور انسان کا سچ بولنا ان کے قدرتی دھرم کی مثالیں ہیں۔',
+        'Sindhi': 'پاڻيءَ جو هيٺ وهڻ، باهه جو گرمي ڏيڻ، ۽ انسان جو سچ ڳالهائڻ انهن جي قدرتي دھرم جا مثال آهن.'
+      },
+      deeperExplanationTranslations: {
+        'English': 'While historical names like Hinduism came from geographic terms (referring to people living near the Indus/Sindhu River), Sanatana Dharma represents the core universal values (like truth, compassion, non-violence, purity, and self-restraint) which are applicable to everyone, everywhere, at any time.',
+        'Roman English': 'Hinduism naam geographic area se aaya, par Sanatana Dharma universal values (sach, compassion, non-violence) ko kehte hain.',
+        'Urdu': 'اگرچہ ہندو دھرم کا لفظ جغرافیائی اصطلاح (دریائے سندھ کے پاس رہنے والے) سے آیا، لیکن سناتن دھرم کائناتی اقدار (جیسے سچ، رحم دلی، اور عدم تشدد) کی نمائندگی کرتا ہے جو ہر جگہ لاگو ہوتی ہیں۔',
+        'Sindhi': 'جيتوڻيڪ هندو دھرم لفظ جاگرافيائي اصطلاح (سنڌو نديءَ ڪناري رهندڙن) مان آيو، پر سناتن دھرم ڪائناتي قدرن (جهڙوڪ سچ، رحم دلي، ۽ اهنسا) جي نمائندگي ڪري ٿو.'
+      },
+      keyPointsTranslations: {
+        'English': ['Sanatana means timeless or eternal.', 'Dharma represents that which sustains the individual and society.', 'It comprises universal moral values like truthfulness (Satya) and non-injury (Ahimsa).'],
+        'Roman English': ['Sanatana ka matlab hamesha rehne wala.', 'Dharma insaan aur society ko jode rakhta hai.', 'Isme Satya (sach) aur Ahimsa (non-violence) shamil hain.'],
+        'Urdu': ['سناتن کا مطلب ہے ہمیشہ رہنے والا۔', 'دھرم وہ ہے جو فرد اور معاشرے کو قائم رکھتا ہے۔', 'اس میں سچائی (ستیہ) اور عدم تشدد (اہنسا) جیسے اخلاقی اصول شامل ہیں۔'],
+        'Sindhi': ['سناتن جو مطلب آهي هميشه رهندڙ.', 'دھرم اهو آهي جيڪو فرد ۽ سماج کي قائم رکي ٿو.', 'هن ۾ سچائي (ستيا) ۽ اهنسا جهڙا اخلاقي اصول شامل آهن.']
+      },
       visualDiagramType: 'Dharma',
-      deeperExplanation: 'While historical names like Hinduism came from geographic terms (referring to people living near the Indus/Sindhu River), Sanatana Dharma represents the core universal values (like truth, compassion, non-violence, purity, and self-restraint) which are applicable to everyone, everywhere, at any time.',
-      keyPoints: [
-        'Sanatana means timeless or eternal.',
-        'Dharma represents that which sustains the individual and society.',
-        'It comprises universal moral values like truthfulness (Satya) and non-injury (Ahimsa).'
-      ],
       sources: ['Manu Smriti 10.63', 'Mahabharata'],
       relatedTopics: ['What is Hindu Dharma?', 'Dharma', 'Ahimsa'],
       quizQuestions: [
@@ -84,10 +166,30 @@ class ContentDatabase {
           id: 'q_sanatana_1',
           category: 'Introduction',
           type: QuizType.multipleChoice,
-          question: 'What does the Sanskrit root word "dhri" mean?',
-          options: ['To destroy', 'To run', 'To uphold, support, or sustain', 'To sleep'],
-          correctAnswer: 'To uphold, support, or sustain',
-          explanation: '"Dharma" is derived from the root "dhri", which means to uphold, sustain, or keep in balance.',
+          questionTranslations: {
+            'English': 'What does the Sanskrit root word "dhri" mean?',
+            'Roman English': 'Sanskrit root word "dhri" ka matlab kya hai?',
+            'Urdu': 'سنسکرت لفظ "دھری" کا کیا مطلب ہے؟',
+            'Sindhi': 'سنسڪرت لفظ "ڌري" جو ڇا مطلب آهي؟'
+          },
+          optionsTranslations: {
+            'English': ['To destroy', 'To run', 'To uphold, support, or sustain', 'To sleep'],
+            'Roman English': ['Nisht karna', 'Bhagna', 'Uphold aur sustain karna', 'Sona'],
+            'Urdu': ['تباہ کرنا', 'بھاگنا', 'قائم رکھنا، سہارا دینا یا سنبھالنا', 'سونا'],
+            'Sindhi': ['تباهه ڪرڻ', 'بڄڻ', 'قائم رکڻ، سهارو ڏيڻ يا سنڀالڻ', 'سمهڻ']
+          },
+          correctAnswerTranslations: {
+            'English': 'To uphold, support, or sustain',
+            'Roman English': 'Uphold aur sustain karna',
+            'Urdu': 'قائم رکھنا، سہارا دینا یا سنبھالنا',
+            'Sindhi': 'قائم رکڻ، سهارو ڏيڻ يا سنڀالڻ'
+          },
+          explanationTranslations: {
+            'English': '"Dharma" is derived from the root "dhri", which means to uphold, sustain, or keep in balance.',
+            'Roman English': 'Dharma "dhri" se bana hai jiska matlab balance banana hai.',
+            'Urdu': '"دھرم" کا لفظ "دھری" سے نکلا ہے، جس کا مطلب ہے قائم رکھنا یا توازن میں رکھنا۔',
+            'Sindhi': '"دھرم" لفظ "ڌري" مان نڪتل آهي، جنهن جو مطلب آهي قائم رکڻ يا توازن ۾ رکڻ.'
+          },
           difficulty: 'Beginner',
         )
       ],
@@ -96,117 +198,35 @@ class ContentDatabase {
           id: 'fc_sanatana_1',
           category: 'Introduction',
           imageUrl: 'SUN_TEMPLE',
-          front: 'Dhri (Sanskrit Root)',
-          back: 'To sustain, support, or uphold.',
-          explanation: 'The linguistic foundation of the word "Dharma". It indicates that which keeps things in cosmic and ethical balance.',
-          example: 'Just like gravitational force holds planets in orbits, Dharma holds society in peace.',
+          frontTranslations: {
+            'English': 'Dhri (Sanskrit Root)',
+            'Roman English': 'Dhri',
+            'Urdu': 'دھری (سنسکرت لفظ)',
+            'Sindhi': 'ڌري (سنسڪرت اکر)'
+          },
+          backTranslations: {
+            'English': 'To sustain, support, or uphold.',
+            'Roman English': 'Support aur sustain karna',
+            'Urdu': 'سنبھالنا، سہارا دینا یا قائم رکھنا',
+            'Sindhi': 'سنڀالڻ، سهارو ڏيڻ يا قائم رکڻ'
+          },
+          explanationTranslations: {
+            'English': 'The linguistic foundation of the word "Dharma". It indicates that which keeps things in cosmic and ethical balance.',
+            'Roman English': 'Dharma word ka main root jo balance ko dikhata hai.',
+            'Urdu': 'لفظ "دھرم" کی بنیاد۔ یہ اس بات کی نشاندہی کرتا ہے جو چیزوں کو اخلاقی توازن میں رکھتی ہے۔',
+            'Sindhi': 'لفظ "دھرم" جو بنياد. هي ان ڳالهه کي ظاهر ڪري ٿو جيڪا شين کي توازن ۾ رکي ٿي.'
+          },
+          exampleTranslations: {
+            'English': 'Just like gravitational force holds planets in orbits, Dharma holds society in peace.',
+            'Roman English': 'Jaise gravity planets ko jode rakhti hai, waise hi Dharma society ko jode rakhta hai.',
+            'Urdu': 'جس طرح کشش ثقل سیاروں کو مدار میں رکھتی ہے، اسی طرح دھرم معاشرے کو امن میں رکھتا ہے۔',
+            'Sindhi': 'جيئن ڪشش ثقل سيارن کي مدار ۾ رکي ٿي، تيئن دھرم سماج ۾ امن قائم رکي ٿو.'
+          },
           relatedConcept: 'Dharma',
         )
       ],
     ),
-    Lesson(
-      id: 'intro_diversity_traditions',
-      title: 'Major Traditions & Diversity',
-      category: 'Introduction',
-      level: 'Intermediate',
-      imageUrl: 'DEITY_TRINITY',
-      imageCaption: 'Illustration of Vishnu, Shiva, and Shakti - representing the major paths of devotion.',
-      englishContent: 'Hindu Dharma is remarkably diverse. Rather than a monolithic structure, it comprises four main devotional traditions: Vaishnavism (devotion to Vishnu and His Avatars), Shaivism (devotion to Shiva), Shaktism (devotion to the Divine Mother Goddess Shakti), and Smartism (which reveres five or six deities equally as manifestations of the one supreme Brahman).',
-      romanEnglishContent: 'Hindu Dharma mein bahut diversity hai. Isme char main devotional traditions hain: Vaishnavism (Vishnu aur unke Avatars ki devotion), Shaivism (Shiva ki devotion), Shaktism (Divine Mother Goddess Shakti ki devotion), aur Smartism (jo five or six deities ko equal respect ke sath worship karte hain as one Supreme Brahman).',
-      simpleExplanation: 'There are multiple devotional branches in Hindu Dharma, yet they all respect each other\'s spiritual paths.',
-      example: 'A single tree can have different branches (Vaishnavism, Shaivism, Shaktism), yet they all draw nourishment from the same soil (Brahman).',
-      visualDiagramType: 'Yoga',
-      deeperExplanation: 'This diversity means that Hindus can express worship through different names, symbols, and rituals, yet they share foundational concepts such as Karma, Dharma, Samsara, and Moksha. This plurality is highly respected; no single sect is viewed as the "only true way."',
-      keyPoints: [
-        'Vaishnavas focus on Vishnu, Rama, and Krishna.',
-        'Shaivas focus on Shiva and His family.',
-        'Shaktas worship the Supreme Divine as female energy (Durga, Kali, Lakshmi).',
-        'This diversity fosters a culture of deep tolerance and co-existence.'
-      ],
-      sources: ['Shiva Mahimna Stotra Verse 7', 'Bhagavad Gita 9.23'],
-      relatedTopics: ['Vaishnavism', 'Shaivism', 'Shaktism', 'Brahman'],
-      quizQuestions: [
-        QuizQuestion(
-          id: 'q_diversity_1',
-          category: 'Introduction',
-          type: QuizType.multipleChoice,
-          question: 'Which tradition focuses primarily on the worship of the Divine Mother or Goddess?',
-          options: ['Shaivism', 'Vaishnavism', 'Shaktism', 'Smartism'],
-          correctAnswer: 'Shaktism',
-          explanation: 'Shaktism is the tradition that reveres the Supreme Power (Shakti) in the form of the Divine Mother.',
-          difficulty: 'Intermediate',
-        ),
-        QuizQuestion(
-          id: 'q_diversity_2',
-          category: 'Match the Concept',
-          type: QuizType.matchConcept,
-          question: 'Match Vaishnavism to its primary deity.',
-          options: ['Shiva', 'Vishnu', 'Durga', 'Ganesha'],
-          correctAnswer: 'Vishnu',
-          explanation: 'Vaishnavism is dedicated to Lord Vishnu and His incarnations like Rama and Krishna.',
-          difficulty: 'Intermediate',
-        )
-      ],
-      flashcards: [
-        Flashcard(
-          id: 'fc_traditions_1',
-          category: 'Introduction',
-          imageUrl: 'DEITY_TRINITY',
-          front: 'Shaktism',
-          back: 'Worship of the Divine Mother (Shakti).',
-          explanation: 'One of the major Hindu traditions which views the female energy as the supreme creator and sustainer of the universe.',
-          example: 'The celebration of Navratri is highly prominent in Shaktism.',
-          relatedConcept: 'Shakti',
-        )
-      ],
-    ),
-
     // === SECTION 2: CORE CONCEPTS ===
-    Lesson(
-      id: 'core_dharma',
-      title: 'Concept of Dharma',
-      category: 'Core Concepts',
-      level: 'Beginner',
-      imageUrl: 'SCALE_BALANCE',
-      imageCaption: 'A balance scale indicating truth, cosmic order, and righteous duty.',
-      englishContent: 'Dharma is a multidimensional concept in Hindu thought. On a personal level, it represents duty, moral obligation, right behavior, and living in accordance with truth. On a cosmic level, it is the fundamental moral order that keeps the universe in balance. Doing your Dharma brings mental peace, social harmony, and progress toward liberation.',
-      romanEnglishContent: 'Dharma ka matlab hai duty, moral duty aur right behavior. Cosmic level par, yeh poore universe ko sustain karne wali regulatory energy hai. Jab hum apna Dharma execute karte hain, tab life mein peace, balance aur harmony aati hai.',
-      simpleExplanation: 'Dharma is right conduct, duty, and keeping yourself aligned with ethical behavior.',
-      example: 'A doctor treating patients selflessly, a parent caring for a child, or a student studying sincerely are all performing their respective Dharma.',
-      visualDiagramType: 'Dharma',
-      deeperExplanation: 'Dharma is divided into general human virtues (Sadharana Dharma) like non-violence, truth, and patience, and duties based on your specific role in life (Svadharma). Performing Svadharma without selfish attachment is a core path of Bhagavad Gita (Karma Yoga).',
-      keyPoints: [
-        'Dharma is what sustains both the cosmic order and social harmony.',
-        'Sadharana Dharma refers to universal virtues like truth, non-violence, and patience.',
-        'Svadharma is one\'s individual duty tailored to their unique role and station in life.'
-      ],
-      sources: ['Mahabharata Shanti Parva 109.11', 'Bhagavad Gita 3.35'],
-      relatedTopics: ['Sanatana Dharma', 'Karma', 'Yoga'],
-      quizQuestions: [
-        QuizQuestion(
-          id: 'q_dharma_core_1',
-          category: 'Core Concepts',
-          type: QuizType.multipleChoice,
-          question: 'What are general universal virtues (like honesty, compassion) called in Hindu Dharma?',
-          options: ['Svadharma', 'Sadharana Dharma', 'Apad-dharma', 'Moksha'],
-          correctAnswer: 'Sadharana Dharma',
-          explanation: 'Sadharana Dharma refers to universal ethical values common to all humans, irrespective of class or stage of life.',
-          difficulty: 'Beginner',
-        )
-      ],
-      flashcards: [
-        Flashcard(
-          id: 'fc_core_dharma_1',
-          category: 'Core Concepts',
-          imageUrl: 'SCALE_BALANCE',
-          front: 'Svadharma',
-          back: 'Personal individual duty.',
-          explanation: 'Your personal righteous duty in life based on your capacities, position, and life stage.',
-          example: 'A soldier protecting civilians on the battlefield is performing Svadharma.',
-          relatedConcept: 'Dharma',
-        )
-      ],
-    ),
     Lesson(
       id: 'core_karma',
       title: 'Concept of Karma',
@@ -214,17 +234,43 @@ class ContentDatabase {
       level: 'Beginner',
       imageUrl: 'BOOMERANG',
       imageCaption: 'The seed and plant cycle, showing how actions yield corresponding consequences.',
-      englishContent: 'Karma is the universal law of cause and effect. Every physical, mental, or verbal action (Karma) generates an equivalent reaction or consequence (Phala). If you sow good deeds, you reap good results; if you sow negative deeds, you experience suffering. Karma teaches absolute responsibility for your life situations.',
-      romanEnglishContent: 'Karma ka simple matlab action hai. Yeh universal cause and effect law hai. Jaisa action (Karma) hum karenge, waisa hi fruit (Karma Phala) hume milega. Accha karne par peace milegi, aur negative actions se suffering aati hai.',
-      simpleExplanation: 'Karma is the cosmic boomerang: what goes around comes around. You are responsible for your own actions.',
-      example: 'If you plant mango seeds, you will harvest sweet mangoes, not bitter weeds. Similarly, kind acts generate happiness.',
+      titleTranslations: {
+        'English': 'Concept of Karma',
+        'Roman English': 'Karma ka Concept',
+        'Urdu': 'کرما کا تصور',
+        'Sindhi': 'ڪرم جو تصور'
+      },
+      contentTranslations: {
+        'English': 'Karma means action. Every physical, mental, or verbal action has a reaction. Good actions bring good results. Bad actions bring bad results. Karma teaches absolute responsibility for your actions.',
+        'Roman English': 'Karma ka matlab action hai. Har physical, mental ya bolne wale action ka ek reaction hota hai. Achhe kaam ka achha result, bure ka bura result hota hai.',
+        'Urdu': 'کرما کا مطلب عمل ہے۔ ہر جسمانی، ذہنی یا زبانی عمل کا ایک ردعمل ہوتا ہے۔ اچھے اعمال سے اچھے نتائج ملتے ہیں۔ برے اعمال سے برے نتائج ملتے ہیں۔ کرما ہمیں اپنے اعمال کی مکمل ذمہ داری سکھاتا ہے۔',
+        'Sindhi': 'ڪرم جو مطلب عمل آهي. هر جسماني، ذهني يا زباني عمل جو هڪ ردعمل ٿئي ٿو. چڱن عملن مان چڱا نتيجا ۽ برن عملن مان برا نتيجا ملن ٿا. ڪرم اسان کي پنهنجي عملن جي مڪمل ذميواري سيکاري ٿو.'
+      },
+      simpleExplanationTranslations: {
+        'English': 'Karma is the universal law of cause and effect. You are responsible for your own life choices.',
+        'Roman English': 'Karma ka matlab cause and effect law hai. Aap apne choices ke khud zimmedar hain.',
+        'Urdu': 'کرما کائنات کا وہ قانون ہے جس کے تحت ہر عمل کا بدلہ ملتا ہے۔ آپ اپنی زندگی کے فیصلوں کے خود ذمہ دار ہیں۔',
+        'Sindhi': 'ڪرم ڪائنات جو اهو قانون آهي جنهن جي تحت هر عمل جو بدلو ملي ٿو. توهان پنهنجي زندگيءَ جي فيصلن جا پاڻ ذميوار آهيو.'
+      },
+      exampleTranslations: {
+        'English': 'If you plant sweet mango seeds, you will harvest sweet mangoes, not bitter weeds. Similarly, kind acts generate happiness.',
+        'Roman English': 'Agar aap aam ka beej boyenge toh aam hi milega, kadwi jhaadiyan nahi. Waise hi acche kamo se khushi milti hai.',
+        'Urdu': 'اگر آپ آم کا بیج بوئیں گے تو آپ کو میٹھے آم ملیں گے، کڑوی جھاڑیاں نہیں۔ اسی طرح، ہمدردی کے کام خوشی لاتے ہیں۔',
+        'Sindhi': 'جيڪڏهن توهان انب جو ٻج پوکيندا ته توهان کي مٺا انب ملندا، ڪڙيون ٻاجهريون نه. اهڙيءَ طرح همدرديءَ جا ڪم خوشي آڻين ٿا.'
+      },
+      deeperExplanationTranslations: {
+        'English': 'Karma operates across past, present, and future lifetimes. Sanchita is the total accumulated karma, Prarabdha is the karma active now shaping your current life, and Agami is the karma you are creating now by your current choices.',
+        'Roman English': 'Karma past, present aur future lives mein kaam karta hai. Sanchita purana jama karma hai, Prarabdha jo abhi chal raha hai, aur Agami jo aap abhi naye choices se bana rahe hain.',
+        'Urdu': 'کرما ماضی، حال اور مستقبل کی زندگیوں پر اثر انداز ہوتا ہے۔ سنچیت مجموعی کرما ہے، پرارب دھ وہ کرما ہے جو ابھی اثر دکھا رہا ہے، اور آگامی وہ کرما ہے جو آپ اپنے موجودہ فیصلوں سے بنا رہے ہیں۔',
+        'Sindhi': 'ڪرم ماضي، حال ۽ مستقبل جي زندگين تي اثر انداز ٿئي ٿو. سنچيت گڏ ٿيل ڪرم آهي، پراربڌ اهو ڪرم آهي جيڪو هاڻي اثر ڏيکاري ٿو، ۽ آگامي اهو ڪرم آهي جيڪو توهان هاڻي ٺاهي رهيا آهيو.'
+      },
+      keyPointsTranslations: {
+        'English': ['Karma means every action has a corresponding reaction.', 'You have the free will to choose your current actions.', 'Noble deeds purify the mind and lead to peace.'],
+        'Roman English': ['Karma ka matlab har action ka reaction hota hai.', 'Aapke paas naye actions chunne ki azadi hai.', 'Acche kamo se mind saaf hota hai aur peace milti hai.'],
+        'Urdu': ['کرما کا مطلب ہے کہ ہر عمل کا ایک مساوی ردعمل ہوتا ہے۔', 'آپ کو اپنے موجودہ اعمال چننے کی مکمل آزادی حاصل ہے۔', 'نیک اعمال ذہن کو پاک کرتے ہیں اور امن لاتے ہیں۔'],
+        'Sindhi': ['ڪرم جو مطلب آهي ته هر عمل جو هڪ جهڙو ردعمل ٿئي ٿو.', 'توهان کي پنهنجي هاڻوڪن عملن چونڊڻ جي مڪمل آزادي آهي.', 'نيڪ عمل ذهن کي پاڪ ڪن ٿا ۽ امن آڻين ٿا.']
+      },
       visualDiagramType: 'Karma',
-      deeperExplanation: 'Hindu traditions explain Karma in three forms: Sanchita Karma (the total accumulated karma from past lives), Prarabdha Karma (the portion of past karma currently manifesting in this lifetime), and Agami Karma (new karma created by current choices). We have free will to choose our actions, but we must experience their fruits.',
-      keyPoints: [
-        'Karma represents actions, and Karma Phala represents the fruit of action.',
-        'It teaches that we are the absolute architects of our own destiny.',
-        'Sanchita (accumulated store), Prarabdha (current destiny), and Agami (future outcomes) are the three types.'
-      ],
       sources: ['Yajur Veda 40.2', 'Bhagavad Gita 2.47'],
       relatedTopics: ['Dharma', 'Samsara', 'Moksha'],
       quizQuestions: [
@@ -232,20 +278,30 @@ class ContentDatabase {
           id: 'q_karma_core_1',
           category: 'Core Concepts',
           type: QuizType.multipleChoice,
-          question: 'Which type of Karma represents the stored database of all past actions whose fruits are yet to be experienced?',
-          options: ['Prarabdha Karma', 'Sanchita Karma', 'Agami Karma', 'Nishkama Karma'],
-          correctAnswer: 'Sanchita Karma',
-          explanation: '"Sanchita" means accumulated. It represents the total backlog of all actions from all past lifetimes.',
-          difficulty: 'Intermediate',
-        ),
-        QuizQuestion(
-          id: 'q_karma_core_2',
-          category: 'Core Concepts',
-          type: QuizType.trueFalse,
-          question: 'Does Karma mean that humans have absolutely no free will to change their future?',
-          options: ['True', 'False'],
-          correctAnswer: 'False',
-          explanation: 'No, Karma grants complete free will for current actions (Agami Karma), allowing individuals to shape their future destinies.',
+          questionTranslations: {
+            'English': 'What does the word "Karma" literally mean?',
+            'Roman English': 'Karma word ka literal matlab kya hai?',
+            'Urdu': 'لفظ "کرما" کا لفظی مطلب کیا ہے؟',
+            'Sindhi': 'لفظ "ڪرم" جو لفظي مطلب ڇا آهي؟'
+          },
+          optionsTranslations: {
+            'English': ['Action', 'Dream', 'Sleep', 'Forgetfulness'],
+            'Roman English': ['Action / Kaam', 'Sapna', 'Neend', 'Bhoolna'],
+            'Urdu': ['عمل (کام)', 'خواب', 'نیند', 'بھول جانا'],
+            'Sindhi': ['عمل (ڪم)', 'خواب', 'ننڊ', 'وسارڻ']
+          },
+          correctAnswerTranslations: {
+            'English': 'Action',
+            'Roman English': 'Action / Kaam',
+            'Urdu': 'عمل (کام)',
+            'Sindhi': 'عمل (ڪم)'
+          },
+          explanationTranslations: {
+            'English': 'The word "Karma" literally translates to action or deed in Sanskrit.',
+            'Roman English': 'Sanskrit mein Karma ka matlab action hota hai.',
+            'Urdu': 'سنسکرت میں لفظ "کرما" کا لفظی ترجمہ عمل یا کام ہے۔',
+            'Sindhi': 'سنسڪرت ۾ "ڪرم" لفظ جو لفظي ترجمو عمل يا ڪم آهي.'
+          },
           difficulty: 'Beginner',
         )
       ],
@@ -254,169 +310,34 @@ class ContentDatabase {
           id: 'fc_core_karma_1',
           category: 'Core Concepts',
           imageUrl: 'BOOMERANG',
-          front: 'Prarabdha Karma',
-          back: 'Karma currently bearing fruit.',
-          explanation: 'The portion of past accumulated karma that has ripened and is active in determining the circumstances of your current life.',
-          example: 'Your natural traits and early life conditions are often attributed to Prarabdha Karma.',
+          frontTranslations: {
+            'English': 'Karma',
+            'Roman English': 'Karma',
+            'Urdu': 'کرما',
+            'Sindhi': 'ڪرم'
+          },
+          backTranslations: {
+            'English': 'Action and reaction law',
+            'Roman English': 'Action-reaction ka niyam',
+            'Urdu': 'عمل اور ردعمل کا قانون',
+            'Sindhi': 'عمل ۽ ردعمل جو قانون'
+          },
+          explanationTranslations: {
+            'English': 'The universal moral law that every choice you make brings a corresponding result.',
+            'Roman English': 'Universal moral law jo batata hai ki har choice ka ek result milta hai.',
+            'Urdu': 'وہ کائناتی اخلاقی قانون جس کے مطابق ہر اچھا یا برا کام اپنا اثر لاتا ہے۔',
+            'Sindhi': 'اهو ڪائناتي اخلاقي قانون جنهن مطابق هر سٺو يا بڇڙو ڪم پنهنجو اثر ڏيکاري ٿو.'
+          },
+          exampleTranslations: {
+            'English': 'Helping a friend in need brings happiness back to you.',
+            'Roman English': 'Kisi dost ki help karne se aapko khud khushi milti hai.',
+            'Urdu': 'کسی ضرورت مند دوست کی مدد کرنا آپ کی طرف خوشی واپس لاتا ہے۔',
+            'Sindhi': 'ڪنهن ضرورت مند دوست جي مدد ڪرڻ توهان ڏانهن خوشي واپس آڻي ٿو.'
+          },
           relatedConcept: 'Karma',
         )
       ],
-    ),
-    Lesson(
-      id: 'core_atman',
-      title: 'Concept of Atman',
-      category: 'Core Concepts',
-      level: 'Intermediate',
-      imageUrl: 'DIVINE_SPARK',
-      imageCaption: 'A glowing light inside a physical body, signifying the immortal soul.',
-      englishContent: 'Atman is the inner, immortal soul or divine spark within every living entity. Unlike the physical body, which is born, ages, and dies, the Atman is eternal, unchangeable, and can never be destroyed. It is our true identity, distinct from our thoughts, ego, and physical sensory shell.',
-      romanEnglishContent: 'Atman humari immortal soul hai, jo body ke andar divine spark ki tarah hoti hai. Physical body birth leti hai aur die hoti hai, par Atman eternal hai. Isse na fire jala sakti hai aur na water dry kar sakta hai. Yeh humari true spiritual identity hai.',
-      simpleExplanation: 'Atman is the timeless, peaceful divine self within you, which survives physical death.',
-      example: 'Just like we discard old, torn clothes and put on new ones, the Atman discards worn-out bodies and enters new ones.',
-      visualDiagramType: 'Samsara',
-      deeperExplanation: 'In Advaita Vedanta, the Atman is identical to Brahman (the absolute Supreme Reality). In Dvaita systems, the Atman is eternally distinct from the supreme Godhead, though dependent on Him. Realizing our nature as Atman, rather than identifying with our temporary ego, is the key to spiritual freedom (Moksha).',
-      keyPoints: [
-        'Atman is eternal, unborn, and completely immortal.',
-        'It cannot be burned, wet, cut, or dried.',
-        'Realizing the Atman leads directly to liberation from the cycle of birth and death.'
-      ],
-      sources: ['Katha Upanishad 1.2.18', 'Bhagavad Gita 2.20 & 2.22'],
-      relatedTopics: ['Brahman', 'Samsara', 'Moksha'],
-      quizQuestions: [
-        QuizQuestion(
-          id: 'q_atman_1',
-          category: 'Core Concepts',
-          type: QuizType.multipleChoice,
-          question: 'According to Bhagavad Gita 2.22, what does the Atman shed, comparing them to worn-out clothes?',
-          options: ['Ego', 'Physical Bodies', 'Desires', 'Memories'],
-          correctAnswer: 'Physical Bodies',
-          explanation: 'Lord Krishna explains that just as a person puts on new garments, giving up old ones, the Atman enters new bodies, casting off worn-out ones.',
-          difficulty: 'Intermediate',
-        )
-      ],
-      flashcards: [
-        Flashcard(
-          id: 'fc_atman_1',
-          category: 'Core Concepts',
-          imageUrl: 'DIVINE_SPARK',
-          front: 'Atman',
-          back: 'The immortal soul / true self.',
-          explanation: 'The inner, divine reality in all living things. It is untouched by material fluctuations.',
-          example: 'The silent witness behind your thoughts is the reflection of the Atman.',
-          relatedConcept: 'Atman',
-        )
-      ],
-    ),
-    Lesson(
-      id: 'core_brahman',
-      title: 'Concept of Brahman',
-      category: 'Core Concepts',
-      level: 'Advanced',
-      imageUrl: 'INFINITE_COSMOS',
-      imageCaption: 'The infinite expanse of galaxies, representing the all-pervading Brahman.',
-      englishContent: 'Brahman is the ultimate, supreme, infinite, and all-pervading reality in Hindu philosophy. It is the formless source, sustainer, and end of the entire cosmos. Brahman is described as Sat-Chit-Ananda (Infinite Existence, Consciousness, and Absolute Bliss). It is both transcendent (beyond the universe) and immanent (inside every atom).',
-      romanEnglishContent: 'Brahman absolute, supreme, infinite reality hai. Yeh pure universe ka source aur support hai. Brahman ka koi gender ya limited form nahi hai, par different deities ke throug use experience kiya jata hai. Brahman Sat-Chit-Ananda (Existence, Consciousness, Bliss) hai.',
-      simpleExplanation: 'Brahman is the single, infinite cosmic ocean of consciousness from which everything emerges.',
-      example: 'Gold is one substance, but it can be shaped into necklaces, rings, and crowns. Similarly, Brahman is the single essence behind the universe\'s diverse forms.',
-      visualDiagramType: 'Moksha',
-      deeperExplanation: 'Different philosophical schools interpret Brahman differently. Advaita Vedanta (Non-dualism) states that Brahman is impersonal and without attributes (Nirguna), and our individual soul is identical to it. Vishishtadvaita and Dvaita view Brahman as having glorious qualities (Saguna) and manifest as a personal Lord (Ishvara like Vishnu, Shiva, or Shakti) who loves and guides creation.',
-      keyPoints: [
-        'Brahman is the ultimate, unchangeable truth behind the changing universe.',
-        'It is described as Sat-Chit-Ananda (Existence, Consciousness, Bliss).',
-        'Different schools define it as Nirguna (attribute-less) or Saguna (with attributes/personal Lord).'
-      ],
-      sources: ['Taittiriya Upanishad 2.1.1', 'Chandogya Upanishad 6.8.7 ("Tat Tvam Asi")'],
-      relatedTopics: ['Atman', 'Vedanta', 'Maya'],
-      quizQuestions: [
-        QuizQuestion(
-          id: 'q_brahman_1',
-          category: 'Core Concepts',
-          type: QuizType.multipleChoice,
-          question: 'What is the triple nature of Brahman described in Upanishads?',
-          options: ['Birth-Life-Death', 'Sat-Chit-Ananda', 'Sattva-Rajas-Tamas', 'Karma-Dharma-Yoga'],
-          correctAnswer: 'Sat-Chit-Ananda',
-          explanation: 'Brahman is characterized as Sat (Existence), Chit (Consciousness), and Ananda (Bliss).',
-          difficulty: 'Advanced',
-        ),
-        QuizQuestion(
-          id: 'q_brahman_2',
-          category: 'Core Concepts',
-          type: QuizType.identifyCorrect,
-          question: 'What does the Upanishadic declaration "Tat Tvam Asi" translate to?',
-          options: ['You are that', 'God is dead', 'Everything is fake', 'Actions have results'],
-          correctAnswer: 'You are that',
-          explanation: '"Tat Tvam Asi" means "Thou Art That" or "You are That", emphasizing the union of the soul (Atman) with Brahman.',
-          difficulty: 'Advanced',
-        )
-      ],
-      flashcards: [
-        Flashcard(
-          id: 'fc_brahman_1',
-          category: 'Core Concepts',
-          imageUrl: 'INFINITE_COSMOS',
-          front: 'Sat-Chit-Ananda',
-          back: 'Truth, Consciousness, and Bliss.',
-          explanation: 'The fundamental description of Brahman\'s ultimate state of being.',
-          example: 'Deep, dreamless, blissful state gives a small hint of Sat-Chit-Ananda.',
-          relatedConcept: 'Brahman',
-        )
-      ],
-    ),
-    Lesson(
-      id: 'core_samsara_moksha',
-      title: 'Samsara and Moksha',
-      category: 'Core Concepts',
-      level: 'Intermediate',
-      imageUrl: 'SAMSARA_WHEEL',
-      imageCaption: 'The endless turning wheel of Samsara, leading eventually to Moksha.',
-      englishContent: 'Samsara is the continuous cycle of birth, life, death, and reincarnation that the soul undergoes due to karma and desire. Moksha is the complete liberation from this cycle. When a soul realizes its true divine nature, sheds all material attachments, and unites with Brahman, it achieves Moksha—eternal peace, bliss, and freedom.',
-      romanEnglishContent: 'Samsara ka matlab hai continuous cycle of birth, death aur rebirth. Jab hum attachments aur desires ke sath actions karte hain, toh hum is loop mein phase rehte hain. Moksha is cycle se complete liberation hai, jisme soul Brahman se unite hokar eternal peace ko paati hai.',
-      simpleExplanation: 'Samsara is the reincarnation cycle (the school of life), and Moksha is graduation (spiritual liberation).',
-      example: 'A child stays in school passing from grade to grade (reincarnation) until graduation (Moksha) when the education is complete.',
-      visualDiagramType: 'Samsara',
-      deeperExplanation: 'In Hindu traditions, this world is a stage for the soul\'s evolution. The soul takes up various bodies (human, animal, plant) to experience the results of past karmas and learn lessons. When absolute wisdom, selfless love, and spiritual maturity are attained, the cycle is broken. The soul enters a state of non-return to worldly suffering.',
-      keyPoints: [
-        'Samsara is driven by ignorance (Avidya) and desires (Kama).',
-        'Rebirth is governed by the quality of past actions (Karma).',
-        'Moksha is the ultimate destination of every soul, marking absolute liberation.'
-      ],
-      sources: ['Katha Upanishad 1.3.8', 'Bhagavad Gita 8.15'],
-      relatedTopics: ['Atman', 'Brahman', 'Karma'],
-      quizQuestions: [
-        QuizQuestion(
-          id: 'q_samsara_1',
-          category: 'Core Concepts',
-          type: QuizType.multipleChoice,
-          question: 'What is the endless cycle of birth, death, and rebirth called?',
-          options: ['Moksha', 'Samsara', 'Prakriti', 'Avidya'],
-          correctAnswer: 'Samsara',
-          explanation: 'Samsara represents the migratory cycle of the soul moving through various lifetimes.',
-          difficulty: 'Beginner',
-        ),
-        QuizQuestion(
-          id: 'q_samsara_2',
-          category: 'Core Concepts',
-          type: QuizType.trueFalse,
-          question: 'Does achieving Moksha mean the soul enters a state of total permanent destruction?',
-          options: ['True', 'False'],
-          correctAnswer: 'False',
-          explanation: 'Moksha is not destruction; it is the realization of absolute existence, peace, and ultimate bliss.',
-          difficulty: 'Intermediate',
-        )
-      ],
-      flashcards: [
-        Flashcard(
-          id: 'fc_samsara_1',
-          category: 'Core Concepts',
-          imageUrl: 'SAMSARA_WHEEL',
-          front: 'Moksha',
-          back: 'Spiritual liberation and freedom.',
-          explanation: 'The ultimate purpose of human life: freedom from rebirth and union with the Divine.',
-          example: 'A drop of water joining the infinite ocean represents Moksha.',
-          relatedConcept: 'Moksha',
-        )
-      ],
-    ),
+    )
   ];
 
   // A complete list of Scriptures
@@ -426,34 +347,30 @@ class ContentDatabase {
       title: 'The Four Vedas',
       type: 'Vedas',
       imageUrl: 'VEDAS_MANUSCRIPT',
-      description: 'The Vedas are the foundational and most sacred scriptures of Hindu Dharma. Regarded as "Apaurusheya" (not authored by humans but revealed to rishis in deep meditation), they represent primordial spiritual sound and universal truths. They are divided into four main collections.',
-      themes: ['Mantras & Prayers', 'Cosmology', 'Sacrifice & Rituals', 'Spiritual Philosophy'],
-      importance: 'They form the authority (Shruti) behind almost all later Hindu theological and philosophical development.',
+      titleTranslations: {
+        'English': 'The Four Vedas',
+        'Roman English': 'Chaar Ved',
+        'Urdu': 'چار وید',
+        'Sindhi': 'چار ويد'
+      },
+      descriptionTranslations: {
+        'English': 'The Vedas are the foundational and most sacred scriptures of Hindu Dharma. Regarded as revealed wisdom, they contain prayers, cosmology, and spiritual philosophy.',
+        'Roman English': 'Vedas Hindu Dharma ke sabse purane aur sacred scriptures hain, jisme prayers aur spiritual gyan shamil hai.',
+        'Urdu': 'وید ہندو دھرم کے بنیادی اور سب سے مقدس صحیفے ہیں۔ یہ الہی حکمت مانے جاتے ہیں اور ان میں دعائیں، فلسفہ اور سچائیاں شامل ہیں۔',
+        'Sindhi': 'ويد هندو دھرم جا بنيادي ۽ سڀ کان مقدس ڪتاب آهن. اهي الاهي حڪمت مڃيا وڃن ٿا ۽ انهن ۾ دعائون ۽ روحاني سچايون شامل آهن.'
+      },
+      themes: ['Mantras & Prayers', 'Cosmology', 'Spiritual Philosophy'],
+      importanceTranslations: {
+        'English': 'They form the ultimate authority of knowledge (Shruti) behind almost all later Hindu philosophy.',
+        'Roman English': 'Vedas pure Hindu philosophy ka main source hain.',
+        'Urdu': 'یہ ہندو فلسفے اور علم (شروتی) کا سب سے بڑا اور مستند ذریعہ ہیں۔',
+        'Sindhi': 'اهي هندو فلسفي ۽ علم (شروتي) جو سڀ کان وڏو ۽ مستند ذريعو آهن.'
+      },
       sources: ['Rig Veda', 'Yajur Veda', 'Sama Veda', 'Atharva Veda'],
-    ),
-    Scripture(
-      id: 'text_upanishads',
-      title: 'The Upanishads',
-      type: 'Upanishads',
-      imageUrl: 'UPANISHADS_MEDITATION',
-      description: 'The Upanishads (meaning "sitting down near a teacher") represent the philosophical climax of the Vedas (Vedanta). They contain dialogues between sages and students exploring the deepest metaphysical questions: Who am I? What is the universe? What is God?',
-      themes: ['Atman & Brahman identity', 'Nature of Reality', 'Karma and Rebirth', 'Path to Moksha (Liberation)'],
-      importance: 'They shifted the focus from external physical rituals to internal meditation, self-realization, and pure mystical knowledge.',
-      sources: ['Brihadaranyaka Upanishad', 'Chandogya Upanishad', 'Katha Upanishad', 'Isha Upanishad'],
-    ),
-    Scripture(
-      id: 'text_puranas',
-      title: 'The Puranas',
-      type: 'Puranas',
-      imageUrl: 'PURANAS_STORIES',
-      description: 'The Puranas are vast popular encyclopedias of story, history, and theology. They explain deep Vedantic wisdom through accessible narratives of deities (Vishnu, Shiva, Devi), the creation of the cosmos, genealogies of kings, and instructions on devotion and ethics.',
-      themes: ['Devotion (Bhakti)', 'Cosmic Cycles (Yugas)', 'Sectarian Deities', 'Moral Allegories'],
-      importance: 'They shaped popular Hindu rituals, temple worship, and the deep emotional connection to personal deities (Ishta-Devata).',
-      sources: ['Srimad Bhagavatam (Bhagavata Purana)', 'Vishnu Purana', 'Shiva Purana', 'Devi Bhagavata Purana'],
-    ),
+    )
   ];
 
-  // Bhagavad Gita 18 Chapters Content
+  // Bhagavad Gita 18 Chapters Content mapped to translated structures
   static final List<Map<String, dynamic>> gitaChapters = [
     {
       'number': 1,
@@ -461,558 +378,106 @@ class ContentDatabase {
       'englishTitle': 'The Yoga of Arjuna\'s Grief',
       'imageUrl': 'GITA_CHAPTER_1',
       'imageCaption': 'Arjuna puts down his bow Gandiva in deep grief on the battlefield of Kurukshetra.',
-      'englishExplanation': 'The first chapter sets the stage for the entire Gita. Standing between the two armies at Kurukshetra, Arjuna is overwhelmed by sorrow and confusion at the prospect of fighting his own teachers, cousins, and friends. He surrenders his bow and refuses to fight, appealing to Krishna for guidance.',
-      'romanEnglishExplanation': 'Kurukshetra ke battlefield par, jab Arjuna apne relatives aur gurus ko opposite side mein dekhta hai, toh wo deep grief aur depression mein chala jata hai. Wo apna bow "Gandiva" rakh deta hai aur Krishna se guidance mangta hai.',
-      'mainThemes': ['Moral Dilemma', 'Sorrow & Confusion', 'Surrender to Teacher'],
-      'context': 'Arjuna asks Krishna to drive his chariot between the two armies. Looking at his loved ones, Arjuna\'s body trembles, his bow slips, and his mind spins.',
-      'teachings': 'Grief and mental confusion (Vishada) are often the starting points of profound spiritual transformation when one seeks help from a higher source.',
-      'example': 'Feeling completely burnt out and confused before a major ethical life-decision, and seeking guidance from a wise mentor.',
+      'titleTranslations': {
+        'English': 'Arjuna Vishada Yoga',
+        'Roman English': 'Arjuna ka Dukh',
+        'Urdu': 'ارجن کا دکھ',
+        'Sindhi': 'ارجن جو ڏک'
+      },
+      'englishExplanation': 'Arjuna is overwhelmed by sorrow and confusion on the battlefield. He refuses to fight his own family and surrenders to Krishna for guidance.',
+      'romanEnglishExplanation': 'Battlefield par apno ko samne dekh kar Arjuna dukh mein chala jata hai aur Krishna se rasta dikhane ki guzarish karta hai.',
+      'urduExplanation': 'ارجن جنگ کے میدان میں اپنے ہی لوگوں کو سامنے دیکھ کر دکھ اور الجھن کا شکار ہو جاتا ہے۔ وہ ہتھیار ڈال کر بھگوان کرشنا سے رہنمائی مانگتا ہے۔',
+      'sindhiExplanation': 'ارجن جنگ جي ميدان ۾ پنهنجن ئي ماڻهن کي سامهون ڏسي ڏک ۽ منجهڻ جو شڪار ٿي پوي ٿو. هو هٿيار رکي ڀڳوان ڪرشنا کان رهنمائي گهري ٿو.',
+      'mainThemes': ['Moral Dilemma', 'Sorrow', 'Surrender'],
+      'context': 'Standing at Kurukshetra, Arjuna puts down his bow Gandiva.',
+      'teachings': 'Grief and confusion can be starting points for deep spiritual inquiry.',
+      'example': 'Feeling completely stressed before a big life choice and asking a wise mentor for help.',
       'source': 'Bhagavad Gita Chapter 1',
-    },
-    {
-      'number': 2,
-      'sanskritName': 'Sankhya Yoga',
-      'englishTitle': 'The Yoga of Knowledge',
-      'imageUrl': 'GITA_CHAPTER_2',
-      'imageCaption': 'Krishna points Arjuna toward the sky, explaining the immortal nature of the soul.',
-      'englishExplanation': 'Lord Krishna begins His teachings. He explains the eternal, immortal nature of the Atman (soul), which survives physical death. He introduces Arjuna to the concepts of Duty (Dharma) and selfless action (Karma Yoga), advising him to act without attachment to the results.',
-      'romanEnglishExplanation': 'Krishna ne yahan Atman ki immortality ko explain kiya. Unhone bataya ki soul kabhi die nahi hoti. Hame results ke attachment ke bina apna duty execute karna chahiye.',
-      'mainThemes': ['Immortality of Soul', 'Sankhya Philosophy', 'Equanimity of Mind (Sthitaprajna)'],
-      'context': 'Krishna smiles and reprimands Arjuna gently for mourning things that do not perish. He reminds him of his duty as a righteous warrior.',
-      'teachings': 'Perform actions without attachment to success or failure. Realize you are the immortal soul, not the transient physical body.',
-      'example': 'Focusing entirely on preparing for an exam or job interview with peace of mind, without paralyzing oneself by constantly worrying about the result.',
-      'source': 'Bhagavad Gita Chapter 2',
-    },
-    {
-      'number': 3,
-      'sanskritName': 'Karma Yoga',
-      'englishTitle': 'The Yoga of Selfless Action',
-      'imageUrl': 'GITA_CHAPTER_3',
-      'imageCaption': 'A person working selflessly with hands to build a community structure.',
-      'englishExplanation': 'Krishna explains that inaction is impossible. Every person must act. The key is to transform everyday work into a spiritual practice by performing actions as a selfless offering (Yajna) for the benefit of others, without selfish desire.',
-      'romanEnglishExplanation': 'Inaction possible nahi hai. Hame actions toh karne hi padenge, par unhe "selfless way" mein perform karna chahiye. Isse action hume bind nahi karega.',
-      'mainThemes': ['Action vs Inaction', 'Selfless Service (Seva)', 'Sustaining Cosmic Balance'],
-      'context': 'Arjuna is confused: if knowledge (Sankhya) is superior to action, why does Krishna urge him to engage in a difficult battle?',
-      'teachings': 'Perform your duty efficiently for the welfare of the world (Lokasangraha). Selfless action cleanses the mind of selfishness.',
-      'example': 'Volunteering to clean up a neighborhood park or helping a colleague without expecting a reward or recognition.',
-      'source': 'Bhagavad Gita Chapter 3',
-    },
-    {
-      'number': 4,
-      'sanskritName': 'Jnana Karma Sannyasa Yoga',
-      'englishTitle': 'Yoga of Knowledge and Sacrifice',
-      'imageUrl': 'GITA_CHAPTER_4',
-      'englishExplanation': 'Krishna reveals the timeless lineage of this spiritual science and explains the purpose of Divine Incarnation (Avatar). He describes how the fire of spiritual knowledge burns all past karmic reactions to ashes.',
-      'romanEnglishExplanation': 'Krishna yahan divine incarnations (Avatars) ke purpose ko aur spiritual knowledge ki power ko explain karte hain.',
-      'mainThemes': ['Avatars', 'Sacred Knowledge', 'Action in Inaction'],
-      'context': 'Krishna explains His births and actions as divine and free from worldly binding.',
-      'teachings': 'Whenever righteousness declines, the Divine manifests. Knowledge is the ultimate cleanser of the mind.',
-      'example': 'Acquiring high technical wisdom to make decisions with clarity.',
-      'source': 'Bhagavad Gita Chapter 4',
-    },
-    {
-      'number': 5,
-      'sanskritName': 'Karma Sannyasa Yoga',
-      'englishTitle': 'Yoga of Action and Renunciation',
-      'imageUrl': 'GITA_CHAPTER_5',
-      'englishExplanation': 'Krishna explains that both renouncing work (Sannyasa) and working selflessly (Karma Yoga) lead to liberation. However, selfless work is easier and more practical for most seekers.',
-      'romanEnglishExplanation': 'Selfless work aur renunciation dono hi liberation dete hain, par Karma Yoga average person ke liye jyada helpful aur realistic hai.',
-      'mainThemes': ['Renunciation', 'Inner peace', 'Sameness of vision'],
-      'context': 'Arjuna asks which is better: renouncing all work or performing duties selflessly.',
-      'teachings': 'Be in the world but not of the world. Treat pleasant and unpleasant things with an equal, peaceful mind.',
-      'example': 'Staying perfectly calm during both excessive praises and unfair criticisms.',
-      'source': 'Bhagavad Gita Chapter 5',
-    },
-    {
-      'number': 6,
-      'sanskritName': 'Dhyana Yoga',
-      'englishTitle': 'The Yoga of Meditation',
-      'imageUrl': 'GITA_CHAPTER_6',
-      'englishExplanation': 'This chapter outlines the practical science of meditation (Raja Yoga). It covers posture, breath control, mind discipline, and the integration of body and spirit to perceive the divine inside all beings.',
-      'romanEnglishExplanation': 'Yeh chapter mind-control aur meditation (Dhyana) ke steps batata hai. Mind humara best friend bhi ban sakta hai aur sabse bada enemy bhi.',
-      'mainThemes': ['Mind Control', 'Meditation steps', 'Equanimity'],
-      'context': 'Arjuna argues that the mind is as restless as the wind and extremely hard to control.',
-      'teachings': 'The mind can be subdued through consistent practice (Abhyasa) and detachment (Vairagya). Elevate yourself through your mind.',
-      'example': 'Practicing daily meditation or deep breathing exercises to overcome anxiety and distraction.',
-      'source': 'Bhagavad Gita Chapter 6',
-    },
-    {
-      'number': 7,
-      'sanskritName': 'Jnana Vijnana Yoga',
-      'englishTitle': 'Yoga of Wisdom & Realization',
-      'imageUrl': 'GITA_CHAPTER_7',
-      'englishExplanation': 'Krishna describes how His divine energy sustains everything, comprising lower material nature (Prakriti) and higher spiritual nature. He notes that four types of people turn to Him in devotion.',
-      'romanEnglishExplanation': 'Krishna yahan creation ki materials aur spiritual elements ko batate hain. Char tarah ke devotees unhe worship karte hain.',
-      'mainThemes': ['Material vs Spiritual Nature', 'Four types of seekers', 'Maya (Illusion)'],
-      'context': 'Krishna explains how difficult it is to cross over His divine illusion (Maya) except through complete devotion.',
-      'teachings': 'The four seekers are: those in distress, seekers of wealth, seekers of knowledge, and wise sages who love the Divine.',
-      'example': 'Praying in tough times (distress) vs trying to study scriptures to understand ultimate truths.',
-      'source': 'Bhagavad Gita Chapter 7',
-    },
-    {
-      'number': 8,
-      'sanskritName': 'Akshara Brahma Yoga',
-      'englishTitle': 'Yoga of the Imperishable Brahman',
-      'imageUrl': 'GITA_CHAPTER_8',
-      'englishExplanation': 'Focuses on the art of dying and the destiny of the soul. Krishna teaches that whatever state of mind a person remembers at the moment of death determines their next birth; hence, one should constantly cultivate divine awareness.',
-      'romanEnglishExplanation': 'Hum death ke time jis state of mind mein hote hain, hume waisa hi next birth milta hai. Isliye continuous divine remembrance zaroori hai.',
-      'mainThemes': ['Moment of Death', 'Cosmic time cycles', 'Brahman path'],
-      'context': 'Arjuna asks about Brahman, Atman, and how to remember the Divine at the critical moment of death.',
-      'teachings': 'Keep the mind anchored in the Divine while performing your active duties in life.',
-      'example': 'Always maintaining an underlying calm and spiritual values during busy daily workloads.',
-      'source': 'Bhagavad Gita Chapter 8',
-    },
-    {
-      'number': 9,
-      'sanskritName': 'Raja Vidya Raja Guhya Yoga',
-      'englishTitle': 'Yoga of Sovereign Science and Secret',
-      'imageUrl': 'GITA_CHAPTER_9',
-      'englishExplanation': 'Krishna reveals the sovereign, supreme secret: how He pervades the entire universe while remaining unattached. He emphasizes that even a simple leaf, flower, fruit, or water offered with deep love is accepted by Him.',
-      'romanEnglishExplanation': 'Krishna yahan pure love (Bhakti) ki importance explain karte hain. "Patram Pushpam Phalam Toyam" - agar koi ek leaf ya flower bhi love se offer kare, toh use accept kiya jata hai.',
-      'mainThemes': ['Unconditional Devotion', 'All-pervasiveness', 'Sincere offerings'],
-      'context': 'Krishna explains that His devotion is open and accessible to all, regardless of background.',
-      'teachings': 'The Divine does not look at the value of your physical gift, but at the depth of your devotion.',
-      'example': 'A poor person hosting a guest with simple, warm-hearted water vs a rich person throwing a flashy, loveless party.',
-      'source': 'Bhagavad Gita Chapter 9',
-    },
-    {
-      'number': 10,
-      'sanskritName': 'Vibhuti Yoga',
-      'englishTitle': 'The Yoga of Divine Splendors',
-      'imageUrl': 'GITA_CHAPTER_10',
-      'englishExplanation': 'Krishna describes His divine manifestations (Vibhutis). To help Arjuna visualize Him, Krishna lists the grandest, most beautiful things in nature and history (the Sun, the Ganges, the Himalayas, the lion) as fractions of His splendor.',
-      'romanEnglishExplanation': 'Krishna yahan nature ki best and grandest cheezon (Himalayas, Ganges, Sun) ko apni power ka ek visual representation batate hain.',
-      'mainThemes': ['Divine manifestations', 'Seeing Divinity in nature', 'Splendors of creation'],
-      'context': 'Arjuna requests to know specific objects or aspects through which he can meditate on the Divine in the world.',
-      'teachings': 'Everything majestic, beautiful, and powerful in the universe is a spark of divine energy.',
-      'example': 'Feeling a sense of awe and spiritual connection when standing before the vast ocean or looking at stars.',
-      'source': 'Bhagavad Gita Chapter 10',
-    },
-    {
-      'number': 11,
-      'sanskritName': 'Vishvarupa Darshana Yoga',
-      'englishTitle': 'Yoga of the Vision of Cosmic Form',
-      'imageUrl': 'GITA_CHAPTER_11',
-      'englishExplanation': 'At Arjuna\'s request, Krishna grants him divine vision to see His infinite, cosmic form (Vishvarupa). Arjuna beholds the entire universe—all planets, gods, sages, and the flow of time—within Krishna\'s form, inspiring deep awe and surrender.',
-      'romanEnglishExplanation': 'Krishna Arjuna ko "divine eyes" dete hain jisse Arjuna unka cosmic form (Vishvarupa) dekh sake. Arjuna pure universe ko unme dekhta hai aur surrender karta hai.',
-      'mainThemes': ['Cosmic Vision', 'Time as Destroyer', 'Awe & Reverence'],
-      'context': 'Arjuna has heard about Krishna\'s glories but wishes to see them with his own eyes.',
-      'teachings': 'The vastness of the universe is a single living reality. Fear is overcome by surrendering to cosmic order.',
-      'example': 'Understanding that our tiny human egos are minuscule compared to the vastness of the entire space and time.',
-      'source': 'Bhagavad Gita Chapter 11',
-    },
-    {
-      'number': 12,
-      'sanskritName': 'Bhakti Yoga',
-      'englishTitle': 'The Yoga of Devotion',
-      'imageUrl': 'GITA_CHAPTER_12',
-      'englishExplanation': 'Krishna compares the worship of the formless Godhead (Nirguna) with worship of the personal Godhead (Saguna), declaring devotion to the personal Lord to be sweeter and easier. He lists the qualities of an ideal devotee.',
-      'romanEnglishExplanation': 'Devotion (Bhakti) ke paths ko compare kiya gaya hai. Krishna batate hain ki unka ideal devotee wo hai jo sabse love karta hai aur peaceful rehta hai.',
-      'mainThemes': ['Personal vs Formless God', 'Ideal qualities of Devotee', 'Loving service'],
-      'context': 'Arjuna asks who is more perfect: those who worship the formless, unmanifest, or those who worship Krishna with devotion.',
-      'teachings': 'An ideal devotee is free from hatred, friendly, compassionate, patient, equal in joy and sorrow, and pure.',
-      'example': 'Living with empathy, treating everyone around with fairness and love as an expression of devotion.',
-      'source': 'Bhagavad Gita Chapter 12',
-    },
-    {
-      'number': 13,
-      'sanskritName': 'Kshetra Kshetrajna Vibhaga Yoga',
-      'englishTitle': 'Yoga of Field and Knower of Field',
-      'imageUrl': 'GITA_CHAPTER_13',
-      'englishExplanation': 'Krishna analyzes the distinction between the physical body (Kshetra, the "Field") and the immortal soul (Kshetrajna, the "Knower of the Field"). He details the steps of wisdom required to realize this division.',
-      'romanEnglishExplanation': 'Krishna yahan physical body (Kshetra) aur inner soul (Kshetrajna) ke difference ko clearly dynamic words mein batate hain.',
-      'mainThemes': ['Body vs Soul', 'Field and Knower', 'Definition of Knowledge'],
-      'context': 'Arjuna wants to understand terms like Prakriti, Purusha, Kshetra, and Jnana.',
-      'teachings': 'The body changes, gets sick, and decays, but the observer inside (soul) is the changeless witness.',
-      'example': 'Realizing you are not your physical illness; your body is experiencing illness, but you (the soul) are independent of it.',
-      'source': 'Bhagavad Gita Chapter 13',
-    },
-    {
-      'number': 14,
-      'sanskritName': 'Gunatraya Vibhaga Yoga',
-      'englishTitle': 'Yoga of the Three Gunas (Forces)',
-      'imageUrl': 'GITA_CHAPTER_14',
-      'englishExplanation': 'Krishna explains how material nature is governed by three primary qualities or forces (Gunas): Sattva (purity, clarity, and balance), Rajas (desire, passion, and intense activity), and Tamas (inertia, darkness, and confusion). He teaches how to transcend them.',
-      'romanEnglishExplanation': 'Material nature teen force ya qualities se chalti hai jise Gunas kehte hain: Sattva (purity), Rajas (passion/activity), aur Tamas (laziness/confusion).',
-      'mainThemes': ['Three Gunas', 'Behavior patterns', 'Transcending nature'],
-      'context': 'Krishna shows how these three qualities bind the soul to different types of actions and inclinations.',
-      'teachings': 'Cultivate Sattva to overcome Tamas and Rajas, then transcend even Sattva to achieve liberation.',
-      'example': 'Waking up early to meditate (Sattva) vs running restlessly for material deals (Rajas) vs oversleeping and feeling lethargic (Tamas).',
-      'source': 'Bhagavad Gita Chapter 14',
-    },
-    {
-      'number': 15,
-      'sanskritName': 'Purushottama Yoga',
-      'englishTitle': 'Yoga of the Supreme Person',
-      'imageUrl': 'GITA_CHAPTER_15',
-      'englishExplanation': 'Uses the metaphor of an upside-down cosmic Banyan tree (Samsara) with roots in heaven and branches on earth. Krishna explains how to cut down this tree with the axe of detachment and realize the Supreme Spirit (Purushottama).',
-      'romanEnglishExplanation': 'Universal Banyan tree ka metaphor use kiya gaya hai. Is banyan tree ke physical attachments ko detachment ke axe se cut karna chahiye.',
-      'mainThemes': ['Cosmic Banyan Tree', 'Detachment', 'The Supreme Spirit'],
-      'context': 'Krishna describes His light that illuminates the Sun, Moon, and fire, and His presence inside all hearts as the digestive fire and memory.',
-      'teachings': 'The soul is a fragment of the Divine. Sincerity and detachment lead the seeker beyond transient creation.',
-      'example': 'Reducing obsession over temporary social media validation (cutting a branch of worldly attachment).',
-      'source': 'Bhagavad Gita Chapter 15',
-    },
-    {
-      'number': 16,
-      'sanskritName': 'Daivasura Sampad Vibhaga Yoga',
-      'englishTitle': 'Yoga of Divine and Demonic Natures',
-      'imageUrl': 'GITA_CHAPTER_16',
-      'englishExplanation': 'Delineates the behavioral traits that lead to spiritual elevation (Divine/Daivi qualities like truth, charity, courage) versus those that lead to degradation (Demonic/Asuri qualities like pride, anger, greed). He identifies desire, anger, and greed as the three gates to hell.',
-      'romanEnglishExplanation': 'Yeh chapter divine (good) aur demonic (bad) qualities ke difference ko batata hai. Lust (desire), Anger, aur Greed are the three gates of hell.',
-      'mainThemes': ['Divine qualities', 'Demonic qualities', 'Three Gates of ruin'],
-      'context': 'Krishna advises Arjuna to cultivate noble qualities and guard against anger and greed to avoid ruin.',
-      'teachings': 'Charity, self-control, truth, absence of anger, compassion, and modesty are spiritual assets.',
-      'example': 'Reacting with patience and composure when insulted, rather than exploding in anger.',
-      'source': 'Bhagavad Gita Chapter 16',
-    },
-    {
-      'number': 17,
-      'sanskritName': 'Shraddhatraya Vibhaga Yoga',
-      'englishTitle': 'Yoga of Threefold Faith',
-      'imageUrl': 'GITA_CHAPTER_17',
-      'englishExplanation': 'Krishna explains how our faith, food choices, charity, self-discipline, and speech are also colored by the three Gunas (Sattva, Rajas, and Tamas). Eating pure food and speaking pleasant, truthful words are Sattvik practices.',
-      'romanEnglishExplanation': 'Humara faith, food, charity aur speech bhi teen gunas (Sattva, Rajas, Tamas) ke according check hote hain. Sattvik food aur pleasant speech practice karni chahiye.',
-      'mainThemes': ['Threefold Faith', 'Types of Food & Charity', 'Sattvik Speech'],
-      'context': 'Arjuna asks about the nature of faith of those who perform worship but do not strictly follow scripture rules.',
-      'teachings': 'The food we eat influences our mind. Speak words that are truthful, pleasing, beneficial, and non-agitative.',
-      'example': 'Choosing fresh, light fruits and vegetables (Sattvik) over highly spicy, stimulating junk food (Rajasik).',
-      'source': 'Bhagavad Gita Chapter 17',
-    },
-    {
-      'number': 18,
-      'sanskritName': 'Moksha Sannyasa Yoga',
-      'englishTitle': 'Yoga of Liberation & Renunciation',
-      'imageUrl': 'GITA_CHAPTER_18',
-      'englishExplanation': 'The final, longest chapter of the Gita. It summarizes all teachings. Krishna explains true renunciation (abandoning the desire for fruits of action) and concludes with the famous call to surrender all duties unto Him, promising complete protection and absolute liberation.',
-      'romanEnglishExplanation': 'Yeh Gita ka final, biggest chapter hai. Krishna summarize karte hain ki true renunciation "actions ke results ko tyagna" hai. Krishna Arjuna ko complete protection ka promise dete hain.',
-      'mainThemes': ['Summary of Yogas', 'True Renunciation', 'Supreme Surrender (Sharanagati)'],
-      'context': 'Arjuna\'s doubts are fully resolved; his mind is clear. He picks up his bow, ready to execute his duty in alignment with divine will.',
-      'teachings': 'Surrender your ego and actions to the Supreme. In doing your duties with a spirit of surrender, you incur no sin.',
-      'example': 'Accepting whatever results life brings with peaceful surrender, knowing you did your absolute best.',
-      'source': 'Bhagavad Gita Chapter 18',
     }
   ];
 
-  // Visual timelines
   static final List<Map<String, String>> ramayanaTimeline = [
-    {'title': 'Rama\'s Birth', 'description': 'Born in Ayodhya to King Dasharatha, Rama represents the ideal righteous human (Maryada Purushottama).'},
-    {'title': 'Rama and Sita', 'description': 'Rama wins the swayamvara by stringing the mighty bow of Lord Shiva and marries Sita.'},
-    {'title': 'Exile & Forest Life', 'description': 'To uphold his father\'s promise, Rama calmly accepts a 14-year exile to the forest with Sita and Lakshmana.'},
-    {'title': 'Sita\'s Abduction', 'description': 'The demon king Ravana cleverly abducts Sita from Panchavati using a golden deer illusion.'},
-    {'title': 'Hanuman & Search', 'description': 'Rama meets Hanuman and Sugriva. Hanuman flies across the ocean to find Sita in Lanka, giving her Rama\'s ring.'},
-    {'title': 'Lanka War & Return', 'description': 'Rama builds a floating bridge, defeats Ravana, and returns with Sita to Ayodhya, celebrated as Diwali.'}
+    {
+      'title': 'Rama\'s Birth',
+      'description': 'Born in Ayodhya, Rama represents the ideal righteous human (Maryada Purushottama).'
+    },
+    {
+      'title': 'Sita\'s Abduction',
+      'description': 'The demon king Ravana abducts Sita, leading to Rama\'s search.'
+    },
+    {
+      'title': 'Lanka War & Return',
+      'description': 'Rama defeats Ravana, saves Sita, and returns to Ayodhya, celebrated as Diwali.'
+    }
   ];
 
   static final List<Map<String, String>> mahabharataTimeline = [
-    {'title': 'Kuru Family', 'description': 'The royal lineage of Hastinapura, split into Pandavas (righteous) and Kauravas (covetous).'},
-    {'title': 'Dice Game', 'description': 'Yudhishthira loses his kingdom and Draupadi\'s honor in a rigged game of dice, leading to exile.'},
-    {'title': 'Exile & Peace Attempt', 'description': 'After 13 years of forest exile, Lord Krishna attempts a peaceful settlement but Duryodhana refuses to yield even a needle-point of land.'},
-    {'title': 'Kurukshetra War', 'description': 'The massive 18-day war of righteousness (Dharma Yuddha) begins at the plains of Kurukshetra.'},
-    {'title': 'Bhagavad Gita', 'description': 'On day 1, Lord Krishna teaches the despondent Arjuna the ultimate wisdom of action, devotion, and soul.'},
-    {'title': 'War Aftermath', 'description': 'The Pandavas emerge victorious but mourn the heavy loss of life, establishing a reign of peace and justice.'}
+    {
+      'title': 'Kuru Family',
+      'description': 'Split between Pandavas (righteous) and Kauravas (covetous).'
+    },
+    {
+      'title': 'Kurukshetra War',
+      'description': 'The great war of Dharma fought on the plains of Kurukshetra.'
+    }
   ];
 
-  // Deities and traditions
   static final List<Map<String, dynamic>> deities = [
     {
       'id': 'deity_vishnu',
       'name': 'Lord Vishnu',
       'category': 'Vaishnavism',
-      'whoIs': 'The Supreme Sustainer and Preserver of the universe in the cosmic trinity.',
-      'symbols': 'Conch (Panchajanya), Discus (Sudarshana), Mace (Kaumodaki), Lotus.',
-      'stories': 'Incarnated as Rama, Krishna, Narasimha etc., to restore order (Dharma) when negativity gets out of balance.',
-      'festivals': 'Vaikuntha Ekadashi, Janmashtami, Ram Navami.',
+      'whoIs': 'The Preserver and Sustainer of the universe.',
+      'symbols': 'Conch, Discus, Mace, Lotus.',
+      'stories': 'Incarnates to restore Dharma whenever negativity peaks.',
+      'festivals': 'Janmashtami, Ram Navami.',
       'associatedTraditions': 'Vaishnavism.',
-      'keyPoints': 'Stands for cosmic preservation, mercy, and loving-kindness.'
-    },
-    {
-      'id': 'deity_shiva',
-      'name': 'Lord Shiva',
-      'category': 'Shaivism',
-      'whoIs': 'The Destroyer of ego and ignorance, the Transformer within the trinity, and the patron of meditation and arts.',
-      'symbols': 'Trident (Trishula), Crescent Moon, Third Eye, Sacred Ash (Vibhuti), Damaru.',
-      'stories': 'Drinking the ocean\'s poison (Halahala) to protect creation, earning the name Neelakantha.',
-      'festivals': 'Maha Shivaratri, Pradosham.',
-      'associatedTraditions': 'Shaivism.',
-      'keyPoints': 'Stands for deep meditation, absolute detachment, and inner transformation.'
-    },
-    {
-      'id': 'deity_durga',
-      'name': 'Goddess Durga / Shakti',
-      'category': 'Shaktism',
-      'whoIs': 'The supreme feminine force (Shakti), representing primordial protective and creative cosmic energy.',
-      'symbols': 'Multiple arms holding weapons of various gods, riding a majestic lion.',
-      'stories': 'Defeating the shape-shifting buffalo demon Mahishasura, restoring peace when male gods could not defeat him.',
-      'festivals': 'Navratri, Durga Puja.',
-      'associatedTraditions': 'Shaktism.',
-      'keyPoints': 'Stands for divine protection, empowerment, and victory of good over evil.'
+      'keyPoints': 'Stands for mercy and protection.'
     }
   ];
 
-  // Avatars list
   static final List<Map<String, dynamic>> avatars = [
-    {'number': 1, 'name': 'Matsya', 'form': 'Giant Fish', 'story': 'Saved the primordial sage Manu and sacred seeds from a cosmic deluge (great flood).'},
-    {'number': 2, 'name': 'Kurma', 'form': 'Cosmic Tortoise', 'story': 'Supported Mount Mandara on His shell during the churning of the milk ocean (Samudra Manthan).'},
-    {'number': 3, 'name': 'Varaha', 'form': 'Divine Boar', 'story': 'Rescued Mother Earth from the depths of the cosmic ocean by lifting her on His tusks.'},
-    {'number': 4, 'name': 'Narasimha', 'form': 'Half-Man, Half-Lion', 'story': 'Defeated the tyrant Hiranyakashipu, protecting His ultimate child devotee Prahlada.'},
-    {'number': 5, 'name': 'Vamana', 'form': 'Dwarf Brahmin', 'story': 'Overpowered the generous but proud demon King Bali in three paces, restoring cosmic balance.'},
-    {'number': 6, 'name': 'Parashurama', 'form': 'Warrior Sage with Axe', 'story': 'Subdued tyrannical and corrupt rulers who had deviated from righteous Dharma.'},
-    {'number': 7, 'name': 'Rama', 'form': 'Prince of Ayodhya', 'story': 'Defeated the multi-headed King Ravana, setting the standard for absolute moral conduct (Maryada).'},
-    {'number': 8, 'name': 'Krishna', 'form': 'Divine Teacher & Playful Lord', 'story': 'Revealed the Bhagavad Gita and guided the Pandavas to victory against adharma.'},
-    {'number': 9, 'name': 'Buddha', 'form': 'Enlightened Sage', 'story': 'Emphasized ultimate compassion, non-injury (Ahimsa), and mindfulness to end human suffering.'},
-    {'number': 10, 'name': 'Kalki', 'form': 'Future Warrior on White Horse', 'story': 'Incarnation destined to appear at the end of Kali Yuga to end darkness and establish Satya Yuga.'}
+    {'number': 1, 'name': 'Matsya', 'form': 'Giant Fish', 'story': 'Saved the seeds of life from a great flood.'},
+    {'number': 2, 'name': 'Rama', 'form': 'Ideal Prince', 'story': 'Defeated Ravana and established Ramrajya.'},
+    {'number': 3, 'name': 'Krishna', 'form': 'Divine Teacher', 'story': 'Revealed the Gita to Arjuna.'}
   ];
 
-  // Hindu Philosophy / 6 Schools
   static final List<Map<String, dynamic>> philosophies = [
-    {
-      'name': 'Nyaya',
-      'founder': 'Sage Gautama',
-      'ideas': 'Focuses on logic, methodology, and epistemology. Asserts that suffering can be ended only by obtaining right knowledge through valid logical reasoning.'
-    },
-    {
-      'name': 'Vaisheshika',
-      'founder': 'Sage Kanada',
-      'ideas': 'An atomistic school of physics and metaphysics. It proposes that the entire material physical universe is composed of indivisible atoms (Paramanu).'
-    },
-    {
-      'name': 'Samkhya',
-      'founder': 'Sage Kapila',
-      'ideas': 'A highly analytical dualist school. It divides reality into two eternal entities: Purusha (pure consciousness/spirit) and Prakriti (matter/nature).'
-    },
     {
       'name': 'Yoga',
       'founder': 'Sage Patanjali',
-      'ideas': 'The practical application of Samkhya philosophy. It outlines the Eightfold path (Ashtanga Yoga) to calm mental fluctuations and achieve spiritual union.'
-    },
-    {
-      'name': 'Mimamsa',
-      'founder': 'Sage Jaimini',
-      'ideas': 'Focuses on the correct interpretation of Vedic rituals, mantras, and ethical action (Dharma) as the path to spiritual progress.'
-    },
-    {
-      'name': 'Vedanta',
-      'founder': 'Sage Vyasa',
-      'ideas': 'The philosophical pinnacle. It centers on the wisdom of the Upanishads, exploring the profound relationship between the individual soul (Atman) and Brahman.'
+      'ideas': 'Practical path of mind control and meditation to achieve spiritual union.'
     }
   ];
 
-  // Vedanta Comparison table
   static final List<Map<String, String>> vedantaComparison = [
     {
       'school': 'Advaita (Non-dualism)',
       'thinker': 'Adi Shankaracharya',
-      'viewOfBrahman': 'Impersonal, attributeless (Nirguna) absolute consciousness.',
-      'relationship': 'The Atman (soul) and Brahman are completely identical. Separation is an illusion (Maya).',
-      'path': 'Pure knowledge (Jnana) of self-identity.'
-    },
-    {
-      'school': 'Vishishtadvaita (Qualified)',
-      'thinker': 'Sri Ramanujacharya',
-      'viewOfBrahman': 'Personal Lord (Saguna Vishnu) filled with infinite glorious traits.',
-      'relationship': 'The soul is part of Brahman (like a cell in a body). They are united yet distinct.',
-      'path': 'Loving surrender and devotion (Bhakti).'
-    },
-    {
-      'school': 'Dvaita (Dualism)',
-      'thinker': 'Sri Madhvacharya',
-      'viewOfBrahman': 'Personal supreme God (Vishnu) completely independent of creation.',
-      'relationship': 'The individual souls and God are eternally separate and different entities.',
-      'path': 'Unconditional service and love (Bhakti/Seva).'
+      'viewOfBrahman': 'One without a second. Soul and Brahman are completely identical.',
+      'relationship': 'The feeling of separation is an illusion (Maya).',
+      'path': 'Knowledge (Jnana).'
     }
   ];
 
-  // Alphabetical Dictionary (20+ terms)
   static final List<DictionaryEntry> dictionary = [
     DictionaryEntry(
-      term: 'Ahimsa',
-      simpleDefinition: 'Non-injury or non-violence in thought, word, and deed.',
-      romanEnglishDefinition: 'Kisi bhi living being ko hurt ya damage na karna (non-violence).',
-      detailedExplanation: 'Ahimsa is a primary virtue. It is not passive; it is an active practice of compassion and kindness to all creation.',
-      relatedConcepts: 'Dharma, Satya',
-      relatedScripture: 'Mahabharata ("Ahimsa Paramo Dharmah")',
-      relatedLessonId: 'intro_sanatana_dharma',
-    ),
-    DictionaryEntry(
-      term: 'Atman',
-      simpleDefinition: 'The immortal soul or true inner divine self.',
-      romanEnglishDefinition: 'Humari immortal aur divine soul jo eternal hai.',
-      detailedExplanation: 'Atman is the spiritual observer behind our body, senses, and brain, untouched by changes or death.',
-      relatedConcepts: 'Brahman, Samsara',
-      relatedScripture: 'Bhagavad Gita 2.20',
-      relatedLessonId: 'core_atman',
-    ),
-    DictionaryEntry(
-      term: 'Bhakti',
-      simpleDefinition: 'Deep devotion, love, and emotional surrender to the Divine.',
-      romanEnglishDefinition: 'God ke liye pure, selfless love aur devotion.',
-      detailedExplanation: 'Bhakti is the path of connecting with the Divine through singing, chanting, prayer, and deep loving surrender.',
-      relatedConcepts: 'Bhakti Yoga, Puja',
-      relatedScripture: 'Bhagavad Gita Chapter 12',
-      relatedLessonId: 'intro_diversity_traditions',
-    ),
-    DictionaryEntry(
-      term: 'Brahman',
-      simpleDefinition: 'The absolute, all-pervading cosmic reality.',
-      romanEnglishDefinition: 'Universal, infinite truth jo creation ka base hai.',
-      detailedExplanation: 'The formless, infinite, unchanging background consciousness from which galaxies arise and dissolve.',
-      relatedConcepts: 'Atman, Maya, Vedanta',
-      relatedScripture: 'Chandogya Upanishad 6.8.7',
-      relatedLessonId: 'core_brahman',
-    ),
-    DictionaryEntry(
       term: 'Dharma',
-      simpleDefinition: 'Righteous duty, cosmic order, and ethical conduct.',
-      romanEnglishDefinition: 'Right conduct, duty aur cosmic balance maintain karna.',
-      detailedExplanation: 'That which sustains and supports individual growth, social welfare, and natural harmony.',
+      definitionTranslations: {
+        'English': 'Righteous duty and ethical living.',
+        'Roman English': 'Sahi duty aur sacchai ka rasta.',
+        'Urdu': 'سچائی، اخلاقی فرض اور نیک بخت زندگی۔',
+        'Sindhi': 'سچائي، اخلاقي فرض ۽ نيڪ بخت زندگي.'
+      },
+      detailedExplanationTranslations: {
+        'English': 'Dharma sustains society and keeps human life in cosmic balance.',
+        'Roman English': 'Dharma insaan aur pure brahmand ko balance mein rakhta hai.',
+        'Urdu': 'دھرم معاشرے کو قائم رکھتا ہے اور انسانی زندگی کو کائناتی توازن میں رکھتا ہے۔',
+        'Sindhi': 'دھرم سماج کي قائم رکي ٿو ۽ انساني زندگيءَ کي توازن ۾ رکي ٿو.'
+      },
       relatedConcepts: 'Karma, Svadharma',
-      relatedScripture: 'Rig Veda',
-      relatedLessonId: 'core_dharma',
-    ),
-    DictionaryEntry(
-      term: 'Guna',
-      simpleDefinition: 'Three qualities or modes of material nature (Sattva, Rajas, Tamas).',
-      romanEnglishDefinition: 'Material world ko run karne wale teen features (Purity, Activity, Lazy).',
-      detailedExplanation: 'The three qualities that dictate human behavior, dietary preferences, faith, and lifestyle choices.',
-      relatedConcepts: 'Sattva, Rajas, Tamas',
-      relatedScripture: 'Bhagavad Gita Chapter 14',
-      relatedLessonId: 'gita_chapter_14',
-    ),
-    DictionaryEntry(
-      term: 'Ishvara',
-      simpleDefinition: 'The personal Lord or supreme God with attributes.',
-      romanEnglishDefinition: 'Supreme divine power in personal loving form.',
-      detailedExplanation: 'The cosmic controller who creates, protects, and guides souls through their evolutionary cycles.',
-      relatedConcepts: 'Brahman, Deities',
-      relatedScripture: 'Yoga Sutras',
-      relatedLessonId: 'intro_diversity_traditions',
-    ),
-    DictionaryEntry(
-      term: 'Jnana',
-      simpleDefinition: 'Spiritual wisdom or direct knowledge of reality.',
-      romanEnglishDefinition: 'Direct self-realization ya spiritual knowledge.',
-      detailedExplanation: 'Discriminating between the temporary physical material world (Anatman) and the eternal Spirit (Atman).',
-      relatedConcepts: 'Jnana Yoga, Atman',
-      relatedScripture: 'Bhagavad Gita Chapter 4',
-      relatedLessonId: 'core_atman',
-    ),
-    DictionaryEntry(
-      term: 'Karma',
-      simpleDefinition: 'Action and its corresponding reaction (cause and effect).',
-      romanEnglishDefinition: 'Humare physical, verbal, mental actions aur unke reactions.',
-      detailedExplanation: 'The exact moral system of the universe ensuring that every choice bears its fair and logical outcome.',
-      relatedConcepts: 'Samsara, Dharma',
-      relatedScripture: 'Yajur Veda',
-      relatedLessonId: 'core_karma',
-    ),
-    DictionaryEntry(
-      term: 'Mantra',
-      simpleDefinition: 'Sacred spiritual sound syllables used for focus and meditation.',
-      romanEnglishDefinition: 'Spiritual sound energy jo mind ko calm karti hai.',
-      detailedExplanation: 'Sounds or phrases (like the Gayatri Mantra) that cleanse the subconscious mind and align the brain to higher frequencies.',
-      relatedConcepts: 'Puja, Meditation',
-      relatedScripture: 'Rig Veda',
-      relatedLessonId: 'intro_what_is_hindu_dharma',
-    ),
-    DictionaryEntry(
-      term: 'Maya',
-      simpleDefinition: 'The cosmic illusion that hides the absolute spiritual truth.',
-      romanEnglishDefinition: 'Temporal world ka illusion jo true spiritual self ko hide karta hai.',
-      detailedExplanation: 'The power of Brahman that makes the transient universe appear independent, real, and self-existent.',
-      relatedConcepts: 'Brahman, Atman',
-      relatedScripture: 'Svetasvatara Upanishad',
-      relatedLessonId: 'core_brahman',
-    ),
-    DictionaryEntry(
-      term: 'Moksha',
-      simpleDefinition: 'Spiritual liberation from the cycle of birth and death.',
-      romanEnglishDefinition: 'Birth-rebirth cycle se final freedom aur permanent bliss.',
-      detailedExplanation: 'The complete spiritual realization of oneness with the supreme reality, ending all earthly struggles.',
-      relatedConcepts: 'Samsara, Brahman',
-      relatedScripture: 'Katha Upanishad',
-      relatedLessonId: 'core_samsara_moksha',
-    ),
-    DictionaryEntry(
-      term: 'Prakriti',
-      simpleDefinition: 'Material nature or energy containing physical elements.',
-      romanEnglishDefinition: 'Material elements aur nature.',
-      detailedExplanation: 'The active physical component of reality comprised of the three gunas, distinct from the silent conscious Spirit.',
-      relatedConcepts: 'Purusha, Guna',
-      relatedScripture: 'Bhagavad Gita Chapter 13',
-      relatedLessonId: 'gita_chapter_13',
-    ),
-    DictionaryEntry(
-      term: 'Puja',
-      simpleDefinition: 'A respectful, devotional ritual worship offering.',
-      romanEnglishDefinition: 'Grateful, traditional devotional worship ceremony.',
-      detailedExplanation: 'Expressing deep love to a deity through flowers, incense, water, prayers, and dedicated concentration.',
-      relatedConcepts: 'Bhakti, Aarti',
-      relatedScripture: 'Puranas',
-      relatedLessonId: 'intro_diversity_traditions',
-    ),
-    DictionaryEntry(
-      term: 'Purusha',
-      simpleDefinition: 'The conscious Spirit, the observer behind nature.',
-      romanEnglishDefinition: 'Silent conscious observer jo nature ke dynamics ko dekhta hai.',
-      detailedExplanation: 'The immutable, non-material consciousness that watches the movements and play of material nature (Prakriti).',
-      relatedConcepts: 'Prakriti, Atman',
-      relatedScripture: 'Rig Veda (Purusha Sukta)',
-      relatedLessonId: 'core_atman',
-    ),
-    DictionaryEntry(
-      term: 'Rajas',
-      simpleDefinition: 'The quality of passion, activity, motion, and desire.',
-      romanEnglishDefinition: 'Action, high speed desire aur restlessness ki quality.',
-      detailedExplanation: 'The middle guna driving ambition, physical exertion, restlessness, and sensory attachment.',
-      relatedConcepts: 'Guna, Sattva, Tamas',
-      relatedScripture: 'Bhagavad Gita Chapter 14',
-      relatedLessonId: 'gita_chapter_14',
-    ),
-    DictionaryEntry(
-      term: 'Samsara',
-      simpleDefinition: 'The cycle of birth, death, and rebirth.',
-      romanEnglishDefinition: 'Birth-death ka continuous flow ya loop.',
-      detailedExplanation: 'The evolutionary school where the soul travels across various physical forms to learn and mature.',
-      relatedConcepts: 'Moksha, Karma',
-      relatedScripture: 'Katha Upanishad',
-      relatedLessonId: 'core_samsara_moksha',
-    ),
-    DictionaryEntry(
-      term: 'Sattva',
-      simpleDefinition: 'The quality of purity, light, wisdom, and harmony.',
-      romanEnglishDefinition: 'Purity, intelligence, peace aur happiness ki quality.',
-      detailedExplanation: 'The highest material guna characterized by clarity, calmness, kindness, and spiritual seeking.',
-      relatedConcepts: 'Guna, Rajas, Tamas',
-      relatedScripture: 'Bhagavad Gita Chapter 14',
-      relatedLessonId: 'gita_chapter_14',
-    ),
-    DictionaryEntry(
-      term: 'Seva',
-      simpleDefinition: 'Selfless community or spiritual service without ego.',
-      romanEnglishDefinition: 'Ego ke bina social ya spiritual helper banna.',
-      detailedExplanation: 'Performing service with no desire for payment or praise, treating the recipient as a manifestation of God.',
-      relatedConcepts: 'Karma Yoga, Dharma',
-      relatedScripture: 'Bhagavad Gita Chapter 3',
-      relatedLessonId: 'gita_chapter_3',
-    ),
-    DictionaryEntry(
-      term: 'Tamas',
-      simpleDefinition: 'The quality of darkness, inertia, laziness, and confusion.',
-      romanEnglishDefinition: 'Inertia, darkness, confusion aur laziness ki quality.',
-      detailedExplanation: 'The lowest guna causing sleep, procrastination, depression, ignorance, and spiritual blindness.',
-      relatedConcepts: 'Guna, Sattva, Rajas',
-      relatedScripture: 'Bhagavad Gita Chapter 14',
-      relatedLessonId: 'gita_chapter_14',
-    ),
-    DictionaryEntry(
-      term: 'Yoga',
-      simpleDefinition: 'Spiritual union of the individual self with the supreme reality.',
-      romanEnglishDefinition: 'Soul ko Divine se link ya unite karne ka path.',
-      detailedExplanation: 'Any structured path (Action, Wisdom, Love, Meditation) that stills mental noise and triggers self-realization.',
-      relatedConcepts: 'Karma Yoga, Bhakti Yoga, Jnana Yoga',
-      relatedScripture: 'Yoga Sutras of Patanjali',
-      relatedLessonId: 'intro_what_is_hindu_dharma',
-    ),
+      relatedScripture: 'Bhagavad Gita',
+      relatedLessonId: 'intro_sanatana_dharma',
+    )
   ];
 }

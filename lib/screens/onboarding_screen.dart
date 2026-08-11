@@ -45,10 +45,10 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
   @override
   Widget build(BuildContext context) {
     final appState = Provider.of<AppState>(context);
-    final theme = Theme.of(context);
+    final isDark = appState.settings.isDarkMode;
 
     return Scaffold(
-      backgroundColor: appState.settings.isDarkMode ? Colors.grey.shade900 : Colors.amber.shade50,
+      backgroundColor: isDark ? const Color(0xFF1E1E1E) : const Color(0xFFFFF9F0),
       body: SafeArea(
         child: Column(
           children: [
@@ -59,7 +59,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 onPressed: () {
                   _controller.jumpToPage(_pages.length - 1);
                 },
-                child: const Text('Skip', style: TextStyle(color: Colors.orange, fontWeight: FontWeight.bold)),
+                child: const Text('Skip', style: TextStyle(color: Color(0xFFFF6B00), fontWeight: FontWeight.bold)),
               ),
             ),
             // Page view
@@ -89,7 +89,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                           style: TextStyle(
                             fontSize: 24,
                             fontWeight: FontWeight.bold,
-                            color: appState.settings.isDarkMode ? Colors.white : Colors.orange.shade900,
+                            color: isDark ? Colors.white : const Color(0xFF8B1A1A),
                           ),
                           textAlign: TextAlign.center,
                         ),
@@ -98,7 +98,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                           page['desc']!,
                           style: TextStyle(
                             fontSize: 16,
-                            color: appState.settings.isDarkMode ? Colors.white70 : Colors.black87,
+                            color: isDark ? Colors.white70 : const Color(0xFF6B4F3C),
                           ),
                           textAlign: TextAlign.center,
                         ),
@@ -117,7 +117,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                   width: _currentIndex == index ? 24 : 8,
                   height: 8,
                   decoration: BoxDecoration(
-                    color: _currentIndex == index ? Colors.orange : Colors.grey,
+                    color: _currentIndex == index ? const Color(0xFFFF6B00) : Colors.grey,
                     borderRadius: BorderRadius.circular(4),
                   ),
                 );
@@ -135,18 +135,32 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
                         ElevatedButton(
-                          onPressed: () => appState.updateLanguage('English'),
+                          onPressed: () => appState.updateLanguage('EN'),
                           style: ElevatedButton.styleFrom(
-                            backgroundColor: appState.settings.language == 'English' ? Colors.orange : Colors.grey.shade300,
+                            backgroundColor: appState.languageCode == 'EN' ? const Color(0xFFFF6B00) : Colors.grey.shade300,
                           ),
                           child: const Text('English'),
                         ),
                         ElevatedButton(
-                          onPressed: () => appState.updateLanguage('Roman English'),
+                          onPressed: () => appState.updateLanguage('ROM'),
                           style: ElevatedButton.styleFrom(
-                            backgroundColor: appState.settings.language == 'Roman English' ? Colors.orange : Colors.grey.shade300,
+                            backgroundColor: appState.languageCode == 'ROM' ? const Color(0xFFFF6B00) : Colors.grey.shade300,
                           ),
-                          child: const Text('Roman English'),
+                          child: const Text('ROM'),
+                        ),
+                        ElevatedButton(
+                          onPressed: () => appState.updateLanguage('UR'),
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: appState.languageCode == 'UR' ? const Color(0xFFFF6B00) : Colors.grey.shade300,
+                          ),
+                          child: const Text('اردو'),
+                        ),
+                        ElevatedButton(
+                          onPressed: () => appState.updateLanguage('SD'),
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: appState.languageCode == 'SD' ? const Color(0xFFFF6B00) : Colors.grey.shade300,
+                          ),
+                          child: const Text('سنڌي'),
                         ),
                       ],
                     ),
@@ -158,21 +172,21 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                         ElevatedButton(
                           onPressed: () => appState.updateLearningLevel('Beginner'),
                           style: ElevatedButton.styleFrom(
-                            backgroundColor: appState.settings.learningLevel == 'Beginner' ? Colors.orange : Colors.grey.shade300,
+                            backgroundColor: appState.settings.learningLevel == 'Beginner' ? const Color(0xFFFF6B00) : Colors.grey.shade300,
                           ),
                           child: const Text('Beginner'),
                         ),
                         ElevatedButton(
                           onPressed: () => appState.updateLearningLevel('Intermediate'),
                           style: ElevatedButton.styleFrom(
-                            backgroundColor: appState.settings.learningLevel == 'Intermediate' ? Colors.orange : Colors.grey.shade300,
+                            backgroundColor: appState.settings.learningLevel == 'Intermediate' ? const Color(0xFFFF6B00) : Colors.grey.shade300,
                           ),
                           child: const Text('Intermediate'),
                         ),
                         ElevatedButton(
                           onPressed: () => appState.updateLearningLevel('Advanced'),
                           style: ElevatedButton.styleFrom(
-                            backgroundColor: appState.settings.learningLevel == 'Advanced' ? Colors.orange : Colors.grey.shade300,
+                            backgroundColor: appState.settings.learningLevel == 'Advanced' ? const Color(0xFFFF6B00) : Colors.grey.shade300,
                           ),
                           child: const Text('Advanced'),
                         ),
@@ -184,7 +198,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                       child: ElevatedButton(
                         onPressed: widget.onFinish,
                         style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.orange.shade800,
+                          backgroundColor: const Color(0xFFFF6B00),
                           padding: const EdgeInsets.symmetric(vertical: 16),
                         ),
                         child: const Text(
@@ -212,7 +226,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                       onPressed: () {
                         _controller.nextPage(duration: const Duration(milliseconds: 300), curve: Curves.easeIn);
                       },
-                      style: ElevatedButton.styleFrom(backgroundColor: Colors.orange),
+                      style: ElevatedButton.styleFrom(backgroundColor: const Color(0xFFFF6B00)),
                       child: const Text('Next'),
                     ),
                   ],

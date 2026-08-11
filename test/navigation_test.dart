@@ -37,8 +37,8 @@ void main() {
       ),
     );
 
-    expect(find.text('Hindu Dharma Learning'), findsOneWidget);
-    await tester.pump(const Duration(seconds: 2));
+    expect(find.text('SANATAN PATH'), findsOneWidget);
+    await tester.pump(const Duration(seconds: 4));
     expect(timeoutTriggered, true);
   });
 
@@ -89,7 +89,7 @@ void main() {
       ),
     );
 
-    expect(find.text('Namaste 🙏'), findsOneWidget);
+    expect(find.text('SANATAN PATH 🙏'), findsOneWidget);
     expect(find.text('DAILY LEARNING ⏳'), findsOneWidget);
     expect(find.text('Concept of Karma'), findsOneWidget);
   });

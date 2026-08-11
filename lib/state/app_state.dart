@@ -6,6 +6,11 @@ class AppState extends ChangeNotifier {
   Settings _settings = Settings();
   Settings get settings => _settings;
 
+  // Helper getter to check if current selected language is RTL (Right-to-Left)
+  bool get isRtl {
+    return _settings.language == "Urdu" || _settings.language == "Sindhi";
+  }
+
   // User progress tracker
   UserProgress _progress = UserProgress(
     xp: 0,
@@ -48,8 +53,22 @@ class AppState extends ChangeNotifier {
 
   // Toggle Language
   void updateLanguage(String lang) {
+    if (lang == "EN") lang = "English";
+    if (lang == "ROM") lang = "Roman English";
+    if (lang == "UR") lang = "Urdu";
+    if (lang == "SD") lang = "Sindhi";
+
     _settings = _settings.copyWith(language: lang);
     notifyListeners();
+  }
+
+  // Get current language flag prefix or code
+  String get languageCode {
+    if (_settings.language == "English") return "EN";
+    if (_settings.language == "Roman English") return "ROM";
+    if (_settings.language == "Urdu") return "UR";
+    if (_settings.language == "Sindhi") return "SD";
+    return "EN";
   }
 
   // Update learning level selection
@@ -175,15 +194,12 @@ class AppState extends ChangeNotifier {
   }
 
   // Check if a specific level is unlocked.
-  // We can lock Intermediate and Advanced content until enough beginner lessons or quizzes are done.
   bool isLevelUnlocked(String level) {
     if (level == "Beginner") return true;
     if (level == "Intermediate") {
-      // Unlocks if at least 2 beginner lessons or 1 quiz completed
       return _progress.completedLessons.length >= 1 || _progress.completedQuizzes.isNotEmpty || _progress.xp >= 50;
     }
     if (level == "Advanced") {
-      // Unlocks if at least 4 lessons and 2 quizzes completed
       return _progress.completedLessons.length >= 3 && _progress.completedQuizzes.length >= 1;
     }
     return true;
@@ -204,15 +220,12 @@ class AppState extends ChangeNotifier {
     if (_progress.completedLessons.isNotEmpty) {
       _unlockBadge('first_lesson');
     }
-    // Check if read any scripture or chapter
     if (_progress.completedLessons.any((id) => id.contains('gita') || id.contains('text'))) {
       _unlockBadge('scripture_explorer');
     }
-    // Check if Gita lesson completed
     if (_progress.completedLessons.any((id) => id.contains('gita_chapter'))) {
       _unlockBadge('gita_beginner');
     }
-    // Check for 3+ lessons completed
     if (_progress.completedLessons.length >= 3) {
       _unlockBadge('streak_3');
     }

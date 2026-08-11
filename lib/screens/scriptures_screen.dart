@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import '../state/app_state.dart';
 import '../data/content_database.dart';
 import '../models/models.dart';
+import '../widgets/language_toggle_bar.dart';
 import 'gita_detail_screen.dart';
 import 'timeline_screen.dart';
 
@@ -34,10 +35,16 @@ class _ScripturesScreenState extends State<ScripturesScreen> with SingleTickerPr
     final isDark = appState.settings.isDarkMode;
 
     return Scaffold(
-      backgroundColor: isDark ? Colors.grey.shade900 : Colors.amber.shade50.withOpacity(0.3),
+      backgroundColor: isDark ? const Color(0xFF1E1E1E) : const Color(0xFFFFF9F0),
       appBar: AppBar(
-        title: const Text('Sacred Scriptures 📖', style: TextStyle(fontWeight: FontWeight.bold)),
-        backgroundColor: Colors.orange.shade800,
+        title: const Text('Sacred Scriptures 📖', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16)),
+        backgroundColor: const Color(0xFF8B1A1A), // Deep Maroon
+        actions: const [
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 12.0),
+            child: Center(child: LanguageToggleBar()),
+          )
+        ],
         bottom: TabBar(
           controller: _tabController,
           isScrollable: true,
@@ -63,17 +70,18 @@ class _ScripturesScreenState extends State<ScripturesScreen> with SingleTickerPr
   }
 
   Widget _buildGitaTab(BuildContext context, bool isDark, AppState state) {
+    final lang = state.settings.language;
     return ListView.builder(
       padding: const EdgeInsets.all(16),
       itemCount: ContentDatabase.gitaChapters.length + 1,
       itemBuilder: (context, idx) {
         if (idx == 0) {
           return Card(
-            color: Colors.orange.shade50,
+            color: const Color(0xFFFFF9F0),
             margin: const EdgeInsets.only(bottom: 16),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(12),
-              side: BorderSide(color: Colors.orange.shade300, width: 1),
+              side: const BorderSide(color: Color(0xFFFF6B00), width: 1.2),
             ),
             child: const Padding(
               padding: EdgeInsets.all(16.0),
@@ -87,7 +95,7 @@ class _ScripturesScreenState extends State<ScripturesScreen> with SingleTickerPr
                       children: [
                         Text(
                           'The Song of the Lord',
-                          style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.brown),
+                          style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Color(0xFF8B1A1A)),
                         ),
                         SizedBox(height: 4),
                         Text(
@@ -104,24 +112,26 @@ class _ScripturesScreenState extends State<ScripturesScreen> with SingleTickerPr
         }
 
         final ch = ContentDatabase.gitaChapters[idx - 1];
+        final String localizedName = (ch['titleTranslations'] as Map<String, String>)[lang] ?? ch['sanskritName'] as String;
+
         return Card(
           margin: const EdgeInsets.only(bottom: 10),
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
           child: ListTile(
             leading: CircleAvatar(
-              backgroundColor: Colors.orange.shade800,
+              backgroundColor: const Color(0xFFFF6B00),
               foregroundColor: Colors.white,
               child: Text('${ch['number']}'),
             ),
             title: Text(
-              ch['sanskritName'] as String,
+              localizedName,
               style: const TextStyle(fontWeight: FontWeight.bold),
             ),
             subtitle: Text(
               ch['englishTitle'] as String,
               style: const TextStyle(fontSize: 12, fontStyle: FontStyle.italic),
             ),
-            trailing: const Icon(Icons.chevron_right, color: Colors.orange),
+            trailing: const Icon(Icons.chevron_right, color: Color(0xFFFF6B00)),
             onTap: () {
               Navigator.push(
                 context,
@@ -138,6 +148,7 @@ class _ScripturesScreenState extends State<ScripturesScreen> with SingleTickerPr
 
   Widget _buildLibrariesTab(BuildContext context, bool isDark, AppState state) {
     final libs = ContentDatabase.scriptures;
+    final lang = state.settings.language;
     return ListView.builder(
       padding: const EdgeInsets.all(16),
       itemCount: libs.length,
@@ -160,7 +171,7 @@ class _ScripturesScreenState extends State<ScripturesScreen> with SingleTickerPr
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            lib.title,
+                            lib.getLocalizedTitle(lang),
                             style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                           ),
                           Text(
@@ -174,13 +185,13 @@ class _ScripturesScreenState extends State<ScripturesScreen> with SingleTickerPr
                 ),
                 const SizedBox(height: 12),
                 Text(
-                  lib.description,
+                  lib.getLocalizedDescription(lang),
                   style: const TextStyle(fontSize: 13, height: 1.4),
                 ),
                 const SizedBox(height: 12),
                 const Text(
                   'Key Philosophical Themes:',
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 12, color: Colors.orange),
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 12, color: Color(0xFFFF6B00)),
                 ),
                 const SizedBox(height: 6),
                 Wrap(
@@ -188,17 +199,17 @@ class _ScripturesScreenState extends State<ScripturesScreen> with SingleTickerPr
                   runSpacing: 4,
                   children: lib.themes.map((theme) {
                     return Chip(
-                      backgroundColor: Colors.orange.shade50,
+                      backgroundColor: const Color(0xFFFFF9F0),
                       label: Text(
                         theme,
-                        style: const TextStyle(fontSize: 10, color: Colors.brown, fontWeight: FontWeight.bold),
+                        style: const TextStyle(fontSize: 10, color: Color(0xFF8B1A1A), fontWeight: FontWeight.bold),
                       ),
                     );
                   }).toList(),
                 ),
                 const SizedBox(height: 8),
                 Text(
-                  'Importance: ${lib.importance}',
+                  'Importance: ${lib.getLocalizedImportance(lang)}',
                   style: const TextStyle(fontSize: 12, fontStyle: FontStyle.italic, color: Colors.grey),
                 ),
               ],

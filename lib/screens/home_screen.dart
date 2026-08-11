@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import '../state/app_state.dart';
 import '../data/content_database.dart';
 import '../models/models.dart';
+import '../widgets/language_toggle_bar.dart';
 import 'lesson_detail_screen.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -14,7 +15,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final appState = Provider.of<AppState>(context);
     final isDark = appState.settings.isDarkMode;
-    final level = appState.settings.learningLevel;
+    final lang = appState.settings.language;
 
     // Filter relevant introductory lessons
     final List<Lesson> introLessons = ContentDatabase.lessons
@@ -22,28 +23,35 @@ class HomeScreen extends StatelessWidget {
         .toList();
 
     return Scaffold(
-      backgroundColor: isDark ? Colors.grey.shade900 : Colors.amber.shade50.withOpacity(0.5),
+      backgroundColor: isDark ? const Color(0xFF1E1E1E) : const Color(0xFFFFF9F0),
       body: CustomScrollView(
         slivers: [
           // Elegant Header
           SliverAppBar(
-            expandedHeight: 140.0,
+            expandedHeight: 160.0,
             floating: false,
             pinned: true,
-            backgroundColor: Colors.orange.shade800,
+            backgroundColor: const Color(0xFF8B1A1A), // Deep Maroon
+            actions: const [
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 12.0),
+                child: Center(child: LanguageToggleBar()),
+              )
+            ],
             flexibleSpace: FlexibleSpaceBar(
               title: const Text(
-                'Namaste 🙏',
+                'SANATAN PATH 🙏',
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                   color: Colors.white,
-                  shadows: [Shadow(blurRadius: 2, color: Colors.black45, offset: Offset(1, 1))],
+                  fontSize: 16,
+                  shadows: [Shadow(blurRadius: 4, color: Colors.black45, offset: Offset(1, 1))],
                 ),
               ),
               background: Container(
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   gradient: LinearGradient(
-                    colors: [Colors.orange.shade900, Colors.orange.shade600],
+                    colors: [Color(0xFF8B1A1A), Color(0xFFFF6B00)],
                     begin: Alignment.topLeft,
                     end: Alignment.bottomRight,
                   ),
@@ -74,7 +82,7 @@ class HomeScreen extends StatelessWidget {
                     style: TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.w600,
-                      color: isDark ? Colors.white : Colors.orange.shade900,
+                      color: isDark ? Colors.white : const Color(0xFF8B1A1A),
                     ),
                   ),
                   const SizedBox(height: 16),
@@ -96,7 +104,7 @@ class HomeScreen extends StatelessWidget {
                       fontSize: 12,
                       fontWeight: FontWeight.bold,
                       letterSpacing: 1.2,
-                      color: isDark ? Colors.white70 : Colors.brown.shade800,
+                      color: isDark ? Colors.white70 : const Color(0xFF6B4F3C),
                     ),
                   ),
                   const SizedBox(height: 12),
@@ -112,7 +120,7 @@ class HomeScreen extends StatelessWidget {
                       fontSize: 12,
                       fontWeight: FontWeight.bold,
                       letterSpacing: 1.2,
-                      color: isDark ? Colors.white70 : Colors.brown.shade800,
+                      color: isDark ? Colors.white70 : const Color(0xFF6B4F3C),
                     ),
                   ),
                   const SizedBox(height: 12),
@@ -128,8 +136,8 @@ class HomeScreen extends StatelessWidget {
                           leading: Container(
                             width: 48,
                             height: 48,
-                            decoration: BoxDecoration(
-                              color: Colors.orange.shade100,
+                            decoration: const BoxDecoration(
+                              color: Color(0xFFFFF9F0),
                               shape: BoxShape.circle,
                             ),
                             child: const Center(
@@ -137,21 +145,21 @@ class HomeScreen extends StatelessWidget {
                             ),
                           ),
                           title: Text(
-                            lesson.title,
+                            lesson.getLocalizedTitle(lang),
                             style: TextStyle(
                               fontWeight: FontWeight.bold,
                               fontSize: 15,
-                              color: isDark ? Colors.white : Colors.black87,
+                              color: isDark ? Colors.white : const Color(0xFF2D1B0E),
                             ),
                           ),
                           subtitle: Text(
                             'Level: ${lesson.level} | ${lesson.category}',
                             style: TextStyle(
                               fontSize: 12,
-                              color: isDark ? Colors.white60 : Colors.grey.shade600,
+                              color: isDark ? Colors.white60 : const Color(0xFF6B4F3C),
                             ),
                           ),
-                          trailing: const Icon(Icons.arrow_forward_ios, size: 16, color: Colors.orange),
+                          trailing: const Icon(Icons.arrow_forward_ios, size: 16, color: Color(0xFFFF6B00)),
                           onTap: () {
                             Navigator.push(
                               context,
@@ -190,29 +198,29 @@ class HomeScreen extends StatelessWidget {
                 const SizedBox(height: 4),
                 Text(
                   '${state.progress.streak} Day Streak',
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 13, color: isDark ? Colors.white : Colors.brown),
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 13, color: isDark ? Colors.white : const Color(0xFF2D1B0E)),
                 ),
               ],
             ),
-            Container(height: 40, width: 1, color: Colors.orange.shade200),
+            Container(height: 40, width: 1, color: const Color(0xFFD4AF37)),
             Column(
               children: [
                 const Text('✨', style: TextStyle(fontSize: 28)),
                 const SizedBox(height: 4),
                 Text(
                   '${state.progress.xp} Total XP',
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 13, color: isDark ? Colors.white : Colors.brown),
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 13, color: isDark ? Colors.white : const Color(0xFF2D1B0E)),
                 ),
               ],
             ),
-            Container(height: 40, width: 1, color: Colors.orange.shade200),
+            Container(height: 40, width: 1, color: const Color(0xFFD4AF37)),
             Column(
               children: [
                 const Text('🎓', style: TextStyle(fontSize: 28)),
                 const SizedBox(height: 4),
                 Text(
                   state.settings.learningLevel,
-                  style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 13, color: Colors.orange),
+                  style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 13, color: Color(0xFFFF6B00)),
                 ),
               ],
             ),
@@ -224,6 +232,7 @@ class HomeScreen extends StatelessWidget {
 
   Widget _buildDailyLearningSection(BuildContext context, AppState state) {
     final isDark = state.settings.isDarkMode;
+    final lang = state.settings.language;
     // We grab 'Concept of Karma' as the daily lesson
     final dailyLesson = ContentDatabase.lessons.firstWhere(
       (l) => l.id == 'core_karma',
@@ -234,9 +243,9 @@ class HomeScreen extends StatelessWidget {
       elevation: 4,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(16),
-        side: const BorderSide(color: Colors.orange, width: 1.5),
+        side: const BorderSide(color: Color(0xFFFF6B00), width: 1.5),
       ),
-      color: isDark ? Colors.grey.shade800 : Colors.orange.shade50,
+      color: isDark ? Colors.grey.shade800 : const Color(0xFFFFF9F0),
       child: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
@@ -248,7 +257,7 @@ class HomeScreen extends StatelessWidget {
                 Container(
                   padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
                   decoration: BoxDecoration(
-                    color: Colors.orange.shade800,
+                    color: const Color(0xFFFF6B00),
                     borderRadius: BorderRadius.circular(12),
                   ),
                   child: const Text(
@@ -261,23 +270,21 @@ class HomeScreen extends StatelessWidget {
             ),
             const SizedBox(height: 12),
             Text(
-              dailyLesson.title,
+              dailyLesson.getLocalizedTitle(lang),
               style: TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
-                color: isDark ? Colors.white : Colors.orange.shade900,
+                color: isDark ? Colors.white : const Color(0xFF8B1A1A),
               ),
             ),
             const SizedBox(height: 6),
             Text(
-              state.settings.language == 'English'
-                  ? dailyLesson.simpleExplanation
-                  : dailyLesson.romanEnglishContent,
+              dailyLesson.getLocalizedSimpleExplanation(lang),
               maxLines: 2,
               overflow: TextOverflow.ellipsis,
               style: TextStyle(
                 fontSize: 13,
-                color: isDark ? Colors.white70 : Colors.black87,
+                color: isDark ? Colors.white70 : const Color(0xFF2D1B0E),
               ),
             ),
             const SizedBox(height: 12),
@@ -291,7 +298,7 @@ class HomeScreen extends StatelessWidget {
                 );
               },
               style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.orange.shade800,
+                backgroundColor: const Color(0xFFFF6B00),
                 shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
               ),
               child: const Text('Start Learning Now', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
@@ -304,12 +311,12 @@ class HomeScreen extends StatelessWidget {
 
   Widget _buildTopicGrid(BuildContext context) {
     final topics = [
-      {'title': 'Sacred Texts', 'icon': '📖', 'tab': 2}, // Tab index for Scriptures
-      {'title': 'Bhagavad Gita', 'icon': '☸️', 'tab': 2}, // We redirect to Scriptures detail or main screen
+      {'title': 'Sacred Texts', 'icon': '📖', 'tab': 2},
+      {'title': 'Bhagavad Gita', 'icon': '☸️', 'tab': 2},
       {'title': 'Ramayana', 'icon': '🏹', 'tab': 2},
-      {'title': 'Core Concepts', 'icon': '🔑', 'tab': 1}, // Tab index for Learn
+      {'title': 'Core Concepts', 'icon': '🔑', 'tab': 1},
       {'title': 'Deities & Traditions', 'icon': '🔱', 'tab': 1},
-      {'title': 'Interactive Quizzes', 'icon': '🏆', 'tab': 3}, // Tab index for Quizzes
+      {'title': 'Interactive Quizzes', 'icon': '🏆', 'tab': 3},
     ];
 
     return GridView.builder(

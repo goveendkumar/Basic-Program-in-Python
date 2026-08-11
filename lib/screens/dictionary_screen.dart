@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import '../state/app_state.dart';
 import '../data/content_database.dart';
 import '../models/models.dart';
+import '../widgets/language_toggle_bar.dart';
 
 class DictionaryScreen extends StatefulWidget {
   const DictionaryScreen({Key? key}) : super(key: key);
@@ -18,7 +19,7 @@ class _DictionaryScreenState extends State<DictionaryScreen> {
   Widget build(BuildContext context) {
     final appState = Provider.of<AppState>(context);
     final isDark = appState.settings.isDarkMode;
-    final isEnglish = appState.settings.language == 'English';
+    final lang = appState.settings.language;
     final fontSize = appState.settings.fontSize;
 
     // Filter and sort terms alphabetically
@@ -28,10 +29,16 @@ class _DictionaryScreenState extends State<DictionaryScreen> {
       ..sort((a, b) => a.term.compareTo(b.term));
 
     return Scaffold(
-      backgroundColor: isDark ? Colors.grey.shade900 : Colors.amber.shade50.withOpacity(0.3),
+      backgroundColor: isDark ? const Color(0xFF1E1E1E) : const Color(0xFFFFF9F0),
       appBar: AppBar(
         title: const Text('Dharma Dictionary 📖', style: TextStyle(fontWeight: FontWeight.bold)),
-        backgroundColor: Colors.orange.shade800,
+        backgroundColor: const Color(0xFF8B1A1A), // Deep Maroon
+        actions: const [
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 12.0),
+            child: Center(child: LanguageToggleBar()),
+          )
+        ],
       ),
       body: Column(
         children: [
@@ -46,7 +53,7 @@ class _DictionaryScreenState extends State<DictionaryScreen> {
               },
               decoration: InputDecoration(
                 hintText: 'Search Sanskrit terms...',
-                prefixIcon: const Icon(Icons.search, color: Colors.orange),
+                prefixIcon: const Icon(Icons.search, color: Color(0xFFFF6B00)),
                 border: OutlineInputBorder(borderRadius: BorderRadius.circular(12)),
                 filled: true,
                 fillColor: isDark ? Colors.grey.shade800 : Colors.white,
@@ -68,10 +75,10 @@ class _DictionaryScreenState extends State<DictionaryScreen> {
                         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
                         child: ExpansionTile(
                           leading: CircleAvatar(
-                            backgroundColor: Colors.orange.shade100,
+                            backgroundColor: const Color(0xFFFF6B00).withOpacity(0.1),
                             child: Text(
                               entry.term.isNotEmpty ? entry.term[0].toUpperCase() : 'ॐ',
-                              style: const TextStyle(color: Colors.orange, fontWeight: FontWeight.bold),
+                              style: const TextStyle(color: Color(0xFFFF6B00), fontWeight: FontWeight.bold),
                             ),
                           ),
                           title: Text(
@@ -79,7 +86,7 @@ class _DictionaryScreenState extends State<DictionaryScreen> {
                             style: const TextStyle(fontWeight: FontWeight.bold),
                           ),
                           subtitle: Text(
-                            isEnglish ? entry.simpleDefinition : entry.romanEnglishDefinition,
+                            entry.getLocalizedDefinition(lang),
                             style: const TextStyle(fontSize: 12, color: Colors.grey),
                           ),
                           children: [
@@ -90,29 +97,17 @@ class _DictionaryScreenState extends State<DictionaryScreen> {
                                 children: [
                                   const Text(
                                     'Detailed Explanation:',
-                                    style: TextStyle(fontWeight: FontWeight.bold, color: Colors.orange, fontSize: 13),
+                                    style: TextStyle(fontWeight: FontWeight.bold, color: Color(0xFFFF6B00), fontSize: 13),
                                   ),
                                   const SizedBox(height: 6),
                                   Text(
-                                    entry.detailedExplanation,
+                                    entry.getLocalizedDetailedExplanation(lang),
                                     style: TextStyle(fontSize: fontSize),
                                   ),
                                   const SizedBox(height: 12),
-                                  if (isEnglish) ...[
-                                    const Text(
-                                      'Roman English (Pronunciation/Meaning):',
-                                      style: TextStyle(fontWeight: FontWeight.bold, color: Colors.grey, fontSize: 12),
-                                    ),
-                                    const SizedBox(height: 4),
-                                    Text(
-                                      entry.romanEnglishDefinition,
-                                      style: TextStyle(fontSize: fontSize - 1, fontStyle: FontStyle.italic),
-                                    ),
-                                    const SizedBox(height: 12),
-                                  ],
                                   Row(
                                     children: [
-                                      const Icon(Icons.menu_book, color: Colors.orange, size: 16),
+                                      const Icon(Icons.menu_book, color: Color(0xFFFF6B00), size: 16),
                                       const SizedBox(width: 8),
                                       Expanded(
                                         child: Text(
@@ -125,7 +120,7 @@ class _DictionaryScreenState extends State<DictionaryScreen> {
                                   const SizedBox(height: 6),
                                   Row(
                                     children: [
-                                      const Icon(Icons.link, color: Colors.orange, size: 16),
+                                      const Icon(Icons.link, color: Color(0xFFFF6B00), size: 16),
                                       const SizedBox(width: 8),
                                       Expanded(
                                         child: Text(

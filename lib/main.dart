@@ -9,7 +9,6 @@ import 'screens/scriptures_screen.dart';
 import 'screens/quiz_categories_screen.dart';
 import 'screens/profile_screen.dart';
 import 'screens/ai_assistant_screen.dart';
-import 'screens/search_screen.dart';
 
 void main() {
   runApp(
@@ -28,25 +27,65 @@ class HinduDharmaApp extends StatelessWidget {
     final appState = Provider.of<AppState>(context);
     final isDark = appState.settings.isDarkMode;
 
+    // "SANATAN PATH" Beautiful Brand Colors Setup
+    final primaryColor = const Color(0xFFFF6B00); // Saffron Orange
+    final secondaryColor = const Color(0xFF8B1A1A); // Deep Maroon
+    final accentColor = const Color(0xFFD4AF37); // Gold
+    final backgroundColor = isDark ? const Color(0xFF1E1E1E) : const Color(0xFFFFF9F0); // Warm Cream
+    final textPrimary = isDark ? const Color(0xFFFFFFFF) : const Color(0xFF2D1B0E); // Dark Brown
+    final textSecondary = isDark ? const Color(0xFFCCCCCC) : const Color(0xFF6B4F3C); // Muted Brown
+
     return MaterialApp(
-      title: 'Hindu Dharma Learning',
+      title: 'SANATAN PATH',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         brightness: isDark ? Brightness.dark : Brightness.light,
-        primarySwatch: Colors.orange,
-        scaffoldBackgroundColor: isDark ? Colors.grey.shade900 : Colors.amber.shade50.withOpacity(0.3),
+        primaryColor: primaryColor,
+        hintColor: accentColor,
+        scaffoldBackgroundColor: backgroundColor,
         appBarTheme: AppBarTheme(
-          backgroundColor: Colors.orange.shade800,
+          backgroundColor: secondaryColor,
           foregroundColor: Colors.white,
-          elevation: 2,
+          elevation: 4,
+          titleTextStyle: const TextStyle(
+            fontSize: 20,
+            fontWeight: FontWeight.bold,
+            letterSpacing: 1.1,
+          ),
+        ),
+        textTheme: TextTheme(
+          bodyLarge: TextStyle(color: textPrimary),
+          bodyMedium: TextStyle(color: textSecondary),
         ),
         bottomNavigationBarTheme: BottomNavigationBarThemeData(
-          backgroundColor: isDark ? Colors.grey.shade900 : Colors.white,
-          selectedItemColor: Colors.orange.shade800,
+          backgroundColor: isDark ? const Color(0xFF121212) : Colors.white,
+          selectedItemColor: primaryColor,
           unselectedItemColor: Colors.grey,
         ),
+        cardTheme: CardThemeData(
+          color: isDark ? Colors.grey.shade900 : Colors.white.withOpacity(0.95),
+          elevation: 3,
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+        ),
       ),
-      home: const AppNavigator(),
+      home: const DirectionalityWrapper(child: AppNavigator()),
+    );
+  }
+}
+
+// Global dynamic TextDirection wrapper supporting Urdu & Sindhi RTL layout direction
+class DirectionalityWrapper extends StatelessWidget {
+  final Widget child;
+  const DirectionalityWrapper({Key? key, required this.child}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    final appState = Provider.of<AppState>(context);
+    final direction = appState.isRtl ? TextDirection.rtl : TextDirection.ltr;
+
+    return Directionality(
+      textDirection: direction,
+      child: child,
     );
   }
 }
@@ -119,7 +158,7 @@ class _AppNavigatorState extends State<AppNavigator> {
         ],
       ),
       floatingActionButton: FloatingActionButton(
-        backgroundColor: Colors.orange.shade800,
+        backgroundColor: const Color(0xFFFF6B00), // Saffron Orange
         foregroundColor: Colors.white,
         tooltip: 'AI Dharma Tutor',
         child: const Icon(Icons.psychology),

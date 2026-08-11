@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import '../state/app_state.dart';
 import '../data/content_database.dart';
 import '../models/models.dart';
+import '../widgets/language_toggle_bar.dart';
 
 class FlashcardsScreen extends StatefulWidget {
   const FlashcardsScreen({Key? key}) : super(key: key);
@@ -28,10 +29,10 @@ class _FlashcardsScreenState extends State<FlashcardsScreen> {
           id: 'fc_fallback_1',
           category: 'Basics',
           imageUrl: '',
-          front: 'Sanatana Dharma',
-          back: 'The Eternal Way',
-          explanation: 'The timeless natural moral code that holds all existence together.',
-          example: 'Showing truth and compassion is Sanatana Dharma.',
+          frontTranslations: {'English': 'Sanatana Dharma'},
+          backTranslations: {'English': 'The Eternal Way'},
+          explanationTranslations: {'English': 'The timeless natural moral code that holds all existence together.'},
+          exampleTranslations: {'English': 'Showing truth and compassion is Sanatana Dharma.'},
           relatedConcept: 'Dharma',
         ),
       );
@@ -44,6 +45,7 @@ class _FlashcardsScreenState extends State<FlashcardsScreen> {
     final appState = Provider.of<AppState>(context);
     final isDark = appState.settings.isDarkMode;
     final fontSize = appState.settings.fontSize;
+    final lang = appState.settings.language;
 
     final cards = _getFlashcards();
     final fc = cards[_currentIndex];
@@ -51,10 +53,16 @@ class _FlashcardsScreenState extends State<FlashcardsScreen> {
     final isBookmarked = appState.bookmarkedFlashcardIds.contains(fc.id);
 
     return Scaffold(
-      backgroundColor: isDark ? Colors.grey.shade900 : Colors.amber.shade50.withOpacity(0.3),
+      backgroundColor: isDark ? const Color(0xFF1E1E1E) : const Color(0xFFFFF9F0),
       appBar: AppBar(
         title: const Text('Spiritual Flashcards 📇', style: TextStyle(fontWeight: FontWeight.bold)),
-        backgroundColor: Colors.orange.shade800,
+        backgroundColor: const Color(0xFF8B1A1A), // Deep Maroon
+        actions: const [
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 12.0),
+            child: Center(child: LanguageToggleBar()),
+          )
+        ],
       ),
       body: Padding(
         padding: const EdgeInsets.all(24.0),
@@ -104,7 +112,7 @@ class _FlashcardsScreenState extends State<FlashcardsScreen> {
                   elevation: 6,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20),
-                    side: const BorderSide(color: Colors.orange, width: 2),
+                    side: const BorderSide(color: Color(0xFFFF6B00), width: 2),
                   ),
                   color: isDark ? Colors.grey.shade800 : Colors.white,
                   child: Padding(
@@ -118,29 +126,29 @@ class _FlashcardsScreenState extends State<FlashcardsScreen> {
                         ),
                         const SizedBox(height: 32),
                         Text(
-                          _isFlipped ? fc.back : fc.front,
+                          _isFlipped ? fc.getLocalizedBack(lang) : fc.getLocalizedFront(lang),
                           textAlign: TextAlign.center,
                           style: TextStyle(
                             fontSize: fontSize + 6,
                             fontWeight: FontWeight.bold,
-                            color: _isFlipped ? Colors.black87 : Colors.orange.shade800,
+                            color: _isFlipped ? Colors.black87 : const Color(0xFFFF6B00),
                           ),
                         ),
                         if (_isFlipped) ...[
                           const SizedBox(height: 16),
                           Text(
-                            fc.explanation,
+                            fc.getLocalizedExplanation(lang),
                             textAlign: TextAlign.center,
                             style: TextStyle(fontSize: fontSize - 1, color: Colors.grey.shade700),
                           ),
                           const SizedBox(height: 12),
                           Container(
                             padding: const EdgeInsets.all(8),
-                            decoration: BoxDecoration(color: Colors.amber.shade50, borderRadius: BorderRadius.circular(8)),
+                            decoration: BoxDecoration(color: const Color(0xFFFFF9F0), borderRadius: BorderRadius.circular(8)),
                             child: Text(
-                              'Example: ${fc.example}',
+                              'Example: ${fc.getLocalizedExample(lang)}',
                               textAlign: TextAlign.center,
-                              style: const TextStyle(fontSize: 11, fontStyle: FontStyle.italic, color: Colors.brown),
+                              style: const TextStyle(fontSize: 11, fontStyle: FontStyle.italic, color: Color(0xFF8B1A1A)),
                             ),
                           )
                         ],
@@ -158,7 +166,7 @@ class _FlashcardsScreenState extends State<FlashcardsScreen> {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 IconButton(
-                  icon: const Icon(Icons.arrow_back_ios, color: Colors.orange, size: 32),
+                  icon: const Icon(Icons.arrow_back_ios, color: Color(0xFFFF6B00), size: 32),
                   onPressed: _currentIndex == 0
                       ? null
                       : () {
@@ -180,7 +188,7 @@ class _FlashcardsScreenState extends State<FlashcardsScreen> {
                   ),
                 ),
                 IconButton(
-                  icon: const Icon(Icons.arrow_forward_ios, color: Colors.orange, size: 32),
+                  icon: const Icon(Icons.arrow_forward_ios, color: Color(0xFFFF6B00), size: 32),
                   onPressed: _currentIndex == cards.length - 1
                       ? null
                       : () {

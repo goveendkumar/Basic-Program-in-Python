@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import '../state/app_state.dart';
 import '../data/content_database.dart';
 import '../models/models.dart';
+import '../widgets/language_toggle_bar.dart';
 import 'quiz_play_screen.dart';
 
 class QuizCategoriesScreen extends StatelessWidget {
@@ -22,10 +23,16 @@ class QuizCategoriesScreen extends StatelessWidget {
     ];
 
     return Scaffold(
-      backgroundColor: isDark ? Colors.grey.shade900 : Colors.amber.shade50.withOpacity(0.3),
+      backgroundColor: isDark ? const Color(0xFF1E1E1E) : const Color(0xFFFFF9F0),
       appBar: AppBar(
-        title: const Text('Interactive Quizzes 🏆', style: TextStyle(fontWeight: FontWeight.bold)),
-        backgroundColor: Colors.orange.shade800,
+        title: const Text('Interactive Quizzes 🏆', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16)),
+        backgroundColor: const Color(0xFF8B1A1A), // Deep Maroon
+        actions: const [
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 12.0),
+            child: Center(child: LanguageToggleBar()),
+          )
+        ],
       ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(16),
@@ -34,8 +41,11 @@ class QuizCategoriesScreen extends StatelessWidget {
           children: [
             // Header stats
             Card(
-              color: Colors.orange.shade100,
-              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+              color: const Color(0xFFFFF9F0),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(12),
+                side: const BorderSide(color: Color(0xFFFF6B00)),
+              ),
               child: Padding(
                 padding: const EdgeInsets.all(16.0),
                 child: Row(
@@ -48,7 +58,7 @@ class QuizCategoriesScreen extends StatelessWidget {
                         children: [
                           const Text(
                             'Your Quiz Accuracy',
-                            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15, color: Colors.brown),
+                            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15, color: Color(0xFF8B1A1A)),
                           ),
                           const SizedBox(height: 4),
                           Text(
@@ -57,7 +67,7 @@ class QuizCategoriesScreen extends StatelessWidget {
                           ),
                           Text(
                             'Accuracy: ${stateAccuracy(appState)}%',
-                            style: const TextStyle(fontSize: 12, fontWeight: FontWeight.bold, color: Colors.orange),
+                            style: const TextStyle(fontSize: 12, fontWeight: FontWeight.bold, color: Color(0xFFFF6B00)),
                           ),
                         ],
                       ),
@@ -88,8 +98,8 @@ class QuizCategoriesScreen extends StatelessWidget {
                     leading: Container(
                       width: 50,
                       height: 50,
-                      decoration: BoxDecoration(
-                        color: Colors.orange.shade50,
+                      decoration: const BoxDecoration(
+                        color: Color(0xFFFFF9F0),
                         shape: BoxShape.circle,
                       ),
                       child: Center(child: Text(cat['icon']!, style: const TextStyle(fontSize: 24))),
@@ -102,7 +112,7 @@ class QuizCategoriesScreen extends StatelessWidget {
                       padding: const EdgeInsets.only(top: 4.0),
                       child: Text(cat['desc']!, style: const TextStyle(fontSize: 12, color: Colors.grey)),
                     ),
-                    trailing: const Icon(Icons.play_circle_fill, color: Colors.orange, size: 32),
+                    trailing: const Icon(Icons.play_circle_fill, color: Color(0xFFFF6B00), size: 32),
                     onTap: () {
                       // Retrieve category questions
                       final questions = _getQuestionsForCategory(cat['name']!);
@@ -146,10 +156,10 @@ class QuizCategoriesScreen extends StatelessWidget {
           id: 'fb_1',
           category: category,
           type: QuizType.multipleChoice,
-          question: 'What is the core pillar of Hindu life?',
-          options: ['Dharma', 'Water', 'Salt', 'Sorrow'],
-          correctAnswer: 'Dharma',
-          explanation: 'Dharma represents the cosmic order and righteous duty which supports life.',
+          questionTranslations: {'English': 'What is the core pillar of Hindu life?'},
+          optionsTranslations: {'English': ['Dharma', 'Water', 'Salt', 'Sorrow']},
+          correctAnswerTranslations: {'English': 'Dharma'},
+          explanationTranslations: {'English': 'Dharma represents the cosmic order and righteous duty which supports life.'},
           difficulty: 'Beginner',
         ),
       );

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../state/app_state.dart';
+import '../widgets/language_toggle_bar.dart';
 
 class GitaDetailScreen extends StatefulWidget {
   final Map<String, dynamic> chapter;
@@ -21,13 +22,17 @@ class _GitaDetailScreenState extends State<GitaDetailScreen> {
     final appState = Provider.of<AppState>(context);
     final isDark = appState.settings.isDarkMode;
     final fontSize = appState.settings.fontSize;
+    final lang = appState.settings.language;
     final ch = widget.chapter;
 
+    final String localizedTitle = (ch['titleTranslations'] as Map<String, String>)[lang] ?? ch['sanskritName'] as String;
+    final String localizedExplanation = ch['${lang.toLowerCase().replaceAll(' ', '')}Explanation'] ?? ch['englishExplanation'] as String;
+
     return Scaffold(
-      backgroundColor: isDark ? Colors.grey.shade900 : Colors.amber.shade50.withOpacity(0.3),
+      backgroundColor: isDark ? const Color(0xFF1E1E1E) : const Color(0xFFFFF9F0),
       appBar: AppBar(
-        title: Text('Adhyaya ${ch['number']}: ${ch['sanskritName']}', style: const TextStyle(fontSize: 16)),
-        backgroundColor: Colors.orange.shade800,
+        title: Text('Adhyaya ${ch['number']}: $localizedTitle', style: const TextStyle(fontSize: 16)),
+        backgroundColor: const Color(0xFF8B1A1A), // Deep Maroon
         actions: [
           IconButton(
             icon: Icon(
@@ -55,9 +60,13 @@ class _GitaDetailScreenState extends State<GitaDetailScreen> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
+              // Language toggle
+              const Center(child: LanguageToggleBar()),
+              const SizedBox(height: 16),
+
               // Chapter Header Banner
               Card(
-                color: Colors.orange.shade800,
+                color: const Color(0xFF8B1A1A),
                 elevation: 4,
                 child: Padding(
                   padding: const EdgeInsets.all(20.0),
@@ -84,58 +93,28 @@ class _GitaDetailScreenState extends State<GitaDetailScreen> {
 
               const SizedBox(height: 16),
 
-              // Simple English content
+              // Explanation
               Text(
-                'English Explanation',
-                style: TextStyle(fontSize: fontSize + 2, fontWeight: FontWeight.bold, color: Colors.orange.shade900),
+                'Explanation',
+                style: TextStyle(fontSize: fontSize + 2, fontWeight: FontWeight.bold, color: const Color(0xFFFF6B00)),
               ),
               const SizedBox(height: 8),
               Text(
-                ch['englishExplanation'] as String,
-                style: TextStyle(fontSize: fontSize, color: isDark ? Colors.white70 : Colors.black87, height: 1.4),
+                localizedExplanation,
+                style: TextStyle(fontSize: fontSize, color: isDark ? Colors.white70 : const Color(0xFF2D1B0E), height: 1.4),
               ),
 
               const SizedBox(height: 16),
 
-              // Roman English content
-              Container(
-                padding: const EdgeInsets.all(12),
-                decoration: BoxDecoration(
-                  color: Colors.orange.shade50.withOpacity(0.5),
-                  borderRadius: BorderRadius.circular(12),
-                  border: Border.all(color: Colors.orange.shade200),
-                ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    const Text(
-                      '🗣️ Roman English Translation:',
-                      style: TextStyle(fontWeight: FontWeight.bold, fontSize: 13, color: Colors.orange),
-                    ),
-                    const SizedBox(height: 6),
-                    Text(
-                      ch['romanEnglishExplanation'] as String,
-                      style: TextStyle(
-                        fontSize: fontSize - 1,
-                        color: isDark ? Colors.white70 : Colors.brown.shade900,
-                        fontStyle: FontStyle.italic,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-
-              const SizedBox(height: 20),
-
               // Krishna-Arjuna Context
               Text(
-                '⚔️ Krishna-Arjuna Context',
-                style: TextStyle(fontSize: fontSize + 2, fontWeight: FontWeight.bold, color: isDark ? Colors.white : Colors.brown.shade800),
+                'Context',
+                style: TextStyle(fontSize: fontSize + 2, fontWeight: FontWeight.bold, color: isDark ? Colors.white : const Color(0xFF2D1B0E)),
               ),
               const SizedBox(height: 6),
               Text(
                 ch['context'] as String,
-                style: TextStyle(fontSize: fontSize, color: isDark ? Colors.white70 : Colors.black87, height: 1.4),
+                style: TextStyle(fontSize: fontSize, color: isDark ? Colors.white70 : const Color(0xFF2D1B0E), height: 1.4),
               ),
 
               const SizedBox(height: 16),
@@ -157,7 +136,7 @@ class _GitaDetailScreenState extends State<GitaDetailScreen> {
                     const SizedBox(height: 10),
                     Text(
                       ch['teachings'] as String,
-                      style: TextStyle(fontSize: fontSize, color: isDark ? Colors.white70 : Colors.black87),
+                      style: TextStyle(fontSize: fontSize, color: isDark ? Colors.white70 : const Color(0xFF2D1B0E)),
                     ),
                     const SizedBox(height: 12),
                     const Text(
@@ -169,7 +148,7 @@ class _GitaDetailScreenState extends State<GitaDetailScreen> {
                       spacing: 8,
                       children: (ch['mainThemes'] as List<String>).map((t) {
                         return Chip(
-                          backgroundColor: Colors.orange.shade100,
+                          backgroundColor: const Color(0xFFFF6B00).withOpacity(0.1),
                           label: Text(t, style: const TextStyle(fontSize: 10, fontWeight: FontWeight.bold)),
                         );
                       }).toList(),
@@ -182,10 +161,10 @@ class _GitaDetailScreenState extends State<GitaDetailScreen> {
 
               // Easy real life example
               Card(
-                color: isDark ? Colors.grey.shade800 : Colors.amber.shade50,
+                color: isDark ? Colors.grey.shade800 : const Color(0xFFFFF9F0),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(12),
-                  side: BorderSide(color: Colors.amber.shade700, width: 1),
+                  side: const BorderSide(color: Color(0xFFD4AF37), width: 1),
                 ),
                 child: Padding(
                   padding: const EdgeInsets.all(16.0),
@@ -196,12 +175,12 @@ class _GitaDetailScreenState extends State<GitaDetailScreen> {
                         children: [
                           const Text('💡', style: TextStyle(fontSize: 20)),
                           const SizedBox(width: 8),
-                          Text(
+                          const Text(
                             'REAL-LIFE ANALOGY',
                             style: TextStyle(
                               fontWeight: FontWeight.bold,
                               fontSize: 13,
-                              color: isDark ? Colors.amber : Colors.orange.shade900,
+                              color: Color(0xFFFF6B00),
                             ),
                           ),
                         ],
@@ -211,22 +190,13 @@ class _GitaDetailScreenState extends State<GitaDetailScreen> {
                         ch['example'] as String,
                         style: TextStyle(
                           fontSize: fontSize - 1,
-                          color: isDark ? Colors.white70 : Colors.black87,
+                          color: isDark ? Colors.white70 : const Color(0xFF2D1B0E),
                           height: 1.4,
                         ),
                       ),
                     ],
                   ),
                 ),
-              ),
-
-              const SizedBox(height: 16),
-
-              // Scripture Source
-              Text(
-                'Source: ${ch['source']}',
-                style: const TextStyle(fontSize: 11, fontStyle: FontStyle.italic, color: Colors.grey),
-                textAlign: TextAlign.right,
               ),
 
               const SizedBox(height: 24),
@@ -271,9 +241,9 @@ class _GitaDetailScreenState extends State<GitaDetailScreen> {
     return Container(
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
-        color: isDark ? Colors.grey.shade800 : Colors.orange.shade50.withOpacity(0.3),
+        color: isDark ? Colors.grey.shade800 : const Color(0xFFFFF9F0),
         borderRadius: BorderRadius.circular(16),
-        border: Border.all(color: Colors.orange, width: 1.2),
+        border: Border.all(color: const Color(0xFFFF6B00), width: 1.2),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -282,7 +252,7 @@ class _GitaDetailScreenState extends State<GitaDetailScreen> {
             children: [
               const Text('❓', style: TextStyle(fontSize: 20)),
               const SizedBox(width: 8),
-              const Text('CHAPTER RECAP QUIZ', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 12, color: Colors.orange)),
+              const Text('CHAPTER RECAP QUIZ', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 12, color: Color(0xFFFF6B00))),
             ],
           ),
           const SizedBox(height: 8),
@@ -298,7 +268,7 @@ class _GitaDetailScreenState extends State<GitaDetailScreen> {
                 optColor = Colors.red.shade200;
               }
             } else if (_selectedAnswerIdx == idx) {
-              optColor = Colors.orange.shade200;
+              optColor = const Color(0xFFFF6B00).withOpacity(0.3);
             }
 
             return Padding(
@@ -333,7 +303,7 @@ class _GitaDetailScreenState extends State<GitaDetailScreen> {
           if (_quizSubmitted) ...[
             const SizedBox(height: 8),
             Text(
-              _quizCorrect ? '✅ Correct! Exellent work.' : '❌ Incorrect! Try reviewing the name at top.',
+              _quizCorrect ? '✅ Correct! Excellent work.' : '❌ Incorrect! Try reviewing the name at top.',
               style: TextStyle(fontWeight: FontWeight.bold, color: _quizCorrect ? Colors.green : Colors.red),
             )
           ]

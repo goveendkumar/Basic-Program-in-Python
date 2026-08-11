@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import '../state/app_state.dart';
 import '../data/content_database.dart';
 import '../models/models.dart';
+import '../widgets/language_toggle_bar.dart';
 import 'lesson_detail_screen.dart';
 
 class AiAssistantScreen extends StatefulWidget {
@@ -25,29 +26,35 @@ class _AiAssistantScreenState extends State<AiAssistantScreen> {
   Widget build(BuildContext context) {
     final appState = Provider.of<AppState>(context);
     final isDark = appState.settings.isDarkMode;
-    final isEnglish = appState.settings.language == 'English';
+    final lang = appState.settings.language;
     final fontSize = appState.settings.fontSize;
 
     return Scaffold(
-      backgroundColor: isDark ? Colors.grey.shade900 : Colors.amber.shade50.withOpacity(0.3),
+      backgroundColor: isDark ? const Color(0xFF1E1E1E) : const Color(0xFFFFF9F0),
       appBar: AppBar(
-        title: const Text('AI Dharma Tutor 🤖', style: TextStyle(fontWeight: FontWeight.bold)),
-        backgroundColor: Colors.orange.shade800,
+        title: const Text('AI Dharma Tutor 🤖', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16)),
+        backgroundColor: const Color(0xFF8B1A1A), // Deep Maroon
+        actions: const [
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 12.0),
+            child: Center(child: LanguageToggleBar()),
+          )
+        ],
       ),
       body: Column(
         children: [
           // Info Banner
           Container(
             padding: const EdgeInsets.all(12),
-            color: Colors.orange.shade50,
+            color: const Color(0xFFFFF9F0),
             child: Row(
               children: [
-                const Icon(Icons.info, color: Colors.orange),
+                const Icon(Icons.info, color: Color(0xFFFF6B00)),
                 const SizedBox(width: 12),
                 Expanded(
                   child: Text(
                     'Note: This tutor answers based on verified scriptures and stored content to prevent inaccuracies.',
-                    style: TextStyle(fontSize: 11, color: Colors.brown.shade900, fontWeight: FontWeight.bold),
+                    style: TextStyle(fontSize: 11, color: const Color(0xFF8B1A1A), fontWeight: FontWeight.bold),
                   ),
                 ),
               ],
@@ -71,7 +78,7 @@ class _AiAssistantScreenState extends State<AiAssistantScreen> {
                     padding: const EdgeInsets.all(12),
                     decoration: BoxDecoration(
                       color: isUser
-                          ? (isDark ? Colors.orange.shade900 : Colors.orange.shade200)
+                          ? (isDark ? const Color(0xFFFF6B00) : const Color(0xFFFFF9F0))
                           : (isDark ? Colors.grey.shade800 : Colors.white),
                       borderRadius: BorderRadius.circular(12).copyWith(
                         topRight: isUser ? Radius.zero : const Radius.circular(12),
@@ -88,8 +95,8 @@ class _AiAssistantScreenState extends State<AiAssistantScreen> {
                             fontSize: 9,
                             fontWeight: FontWeight.bold,
                             color: isUser
-                                ? (isDark ? Colors.orange.shade200 : Colors.brown.shade900)
-                                : Colors.orange.shade800,
+                                ? (isDark ? Colors.white : const Color(0xFF8B1A1A))
+                                : const Color(0xFFFF6B00),
                             letterSpacing: 1.1,
                           ),
                         ),
@@ -113,7 +120,7 @@ class _AiAssistantScreenState extends State<AiAssistantScreen> {
                           if (msg['sourceScripture'] != null)
                             Text(
                               'Source: ${msg['sourceScripture']}',
-                              style: const TextStyle(fontSize: 10, fontStyle: FontStyle.italic, color: Colors.orange),
+                              style: const TextStyle(fontSize: 10, fontStyle: FontStyle.italic, color: Color(0xFFFF6B00)),
                             ),
                           const SizedBox(height: 8),
                           ElevatedButton.icon(
@@ -128,7 +135,7 @@ class _AiAssistantScreenState extends State<AiAssistantScreen> {
                             icon: const Icon(Icons.menu_book, size: 14, color: Colors.white),
                             label: const Text('View Source Lesson', style: TextStyle(fontSize: 10, color: Colors.white)),
                             style: ElevatedButton.styleFrom(
-                              backgroundColor: Colors.orange.shade800,
+                              backgroundColor: const Color(0xFFFF6B00),
                               minimumSize: const Size(0, 24),
                               padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                             ),
@@ -155,14 +162,14 @@ class _AiAssistantScreenState extends State<AiAssistantScreen> {
                   child: TextField(
                     controller: _queryController,
                     decoration: const InputDecoration(
-                      hintText: 'Ask e.g. "What is Karma?" or "What is Atman?"',
+                      hintText: 'Ask e.g. "What is Karma?" or "What is Dharma?"',
                       border: InputBorder.none,
                     ),
                     onSubmitted: (val) => _handleQuery(val),
                   ),
                 ),
                 IconButton(
-                  icon: const Icon(Icons.send, color: Colors.orange),
+                  icon: const Icon(Icons.send, color: Color(0xFFFF6B00)),
                   onPressed: () => _handleQuery(_queryController.text),
                 ),
               ],
@@ -185,13 +192,16 @@ class _AiAssistantScreenState extends State<AiAssistantScreen> {
 
     _queryController.clear();
 
+    final appState = Provider.of<AppState>(context, listen: false);
+    final lang = appState.settings.language;
+
     // AI Logic: Retrieve stored offline content
     final qLower = query.toLowerCase();
     Lesson? foundLesson;
 
     for (var l in ContentDatabase.lessons) {
-      if (qLower.contains(l.title.toLowerCase()) ||
-          l.title.toLowerCase().contains(qLower) ||
+      if (qLower.contains(l.getLocalizedTitle(lang).toLowerCase()) ||
+          l.getLocalizedTitle(lang).toLowerCase().contains(qLower) ||
           qLower.contains(l.id.replaceAll('_', ' '))) {
         foundLesson = l;
         break;
@@ -219,8 +229,8 @@ class _AiAssistantScreenState extends State<AiAssistantScreen> {
         if (foundLesson != null) {
           _chatHistory.add({
             'role': 'assistant',
-            'text': foundLesson!.simpleExplanation + '\n\n' + foundLesson!.deeperExplanation,
-            'sourceLesson': foundLesson!.title,
+            'text': foundLesson!.getLocalizedSimpleExplanation(lang) + '\n\n' + foundLesson!.getLocalizedDeeperExplanation(lang),
+            'sourceLesson': foundLesson!.getLocalizedTitle(lang),
             'sourceScripture': foundLesson!.sources.isNotEmpty ? foundLesson!.sources.first : 'Hindu Scriptures',
             'lessonObject': foundLesson,
           });

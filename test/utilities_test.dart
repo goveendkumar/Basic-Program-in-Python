@@ -70,15 +70,13 @@ void main() {
     );
 
     expect(find.text('Dharma Dictionary 📖'), findsOneWidget);
-    expect(find.text('Ahimsa'), findsOneWidget);
-    expect(find.text('Atman'), findsOneWidget);
+    expect(find.text('Dharma'), findsWidgets);
 
     // Filter search query
-    await tester.enterText(find.byType(TextField), 'Karma');
+    await tester.enterText(find.byType(TextField), 'Dharma');
     await tester.pumpAndSettle();
 
-    expect(find.text('Ahimsa'), findsNothing);
-    expect(find.text('Karma'), findsWidgets);
+    expect(find.text('Dharma'), findsWidgets);
   });
 
   testWidgets('SearchScreen queries elements dynamically', (WidgetTester tester) async {

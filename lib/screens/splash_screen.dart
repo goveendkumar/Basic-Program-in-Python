@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../widgets/educational_diagrams.dart';
 
 class SplashScreen extends StatefulWidget {
   final VoidCallback onTimeout;
@@ -8,54 +9,72 @@ class SplashScreen extends StatefulWidget {
   State<SplashScreen> createState() => _SplashScreenState();
 }
 
-class _SplashScreenState extends State<SplashScreen> {
+class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderStateMixin {
+  late AnimationController _controller;
+
   @override
   void initState() {
     super.initState();
-    Future.delayed(const Duration(seconds: 1), widget.onTimeout);
+    _controller = AnimationController(
+      vsync: this,
+      duration: const Duration(seconds: 3),
+    )..repeat(); // Smooth pulsing animation for the 3D Om
+
+    Future.delayed(const Duration(seconds: 3), widget.onTimeout);
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.amber.shade50,
+      backgroundColor: const Color(0xFF8B1A1A), // Deep Maroon background
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Container(
-              padding: const EdgeInsets.all(24),
-              decoration: BoxDecoration(
-                color: Colors.orange.shade100,
-                shape: BoxShape.circle,
-              ),
-              child: const Text(
-                '🙏',
-                style: TextStyle(fontSize: 80),
-              ),
+            // Pulse Animated 3D Om Logo Inside Golden Mandala
+            AnimatedBuilder(
+              animation: _controller,
+              builder: (context, child) {
+                return SizedBox(
+                  width: 180,
+                  height: 180,
+                  child: CustomPaint(
+                    painter: OmLogoPainter(animationValue: _controller.value),
+                  ),
+                );
+              },
             ),
             const SizedBox(height: 24),
-            Text(
-              'Hindu Dharma Learning',
+            const Text(
+              'SANATAN PATH',
               style: TextStyle(
-                fontSize: 28,
+                fontSize: 32,
                 fontWeight: FontWeight.bold,
-                color: Colors.orange.shade900,
-                letterSpacing: 1.2,
+                color: Color(0xFFD4AF37), // Gold accent
+                letterSpacing: 1.5,
+                shadows: [
+                  Shadow(blurRadius: 10, color: Colors.black45, offset: Offset(2, 2)),
+                ],
               ),
             ),
-            const SizedBox(height: 12),
+            const SizedBox(height: 8),
             const Text(
-              'Text + Visual Lessons for Absolute Beginners to Sages',
+              'Your Guide to Eternal Wisdom',
               style: TextStyle(
                 fontSize: 14,
-                color: Colors.brown,
+                color: Color(0xFFFFF9F0), // Warm Cream
                 fontStyle: FontStyle.italic,
               ),
             ),
             const SizedBox(height: 48),
             const CircularProgressIndicator(
-              valueColor: AlwaysStoppedAnimation<Color>(Colors.orange),
+              valueColor: AlwaysStoppedAnimation<Color>(Color(0xFFD4AF37)),
             ),
           ],
         ),

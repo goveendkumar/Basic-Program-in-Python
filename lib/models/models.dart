@@ -5,13 +5,16 @@ class Lesson {
   final String level; // "Beginner", "Intermediate", "Advanced"
   final String imageUrl; // placeholder/description string for visual rendering
   final String imageCaption;
-  final String englishContent;
-  final String romanEnglishContent;
-  final String simpleExplanation;
-  final String example;
+
+  // Multilingual content map for flexibility and ease of lookup
+  final Map<String, String> titleTranslations;
+  final Map<String, String> contentTranslations;
+  final Map<String, String> simpleExplanationTranslations;
+  final Map<String, String> exampleTranslations;
+  final Map<String, String> deeperExplanationTranslations;
+  final Map<String, List<String>> keyPointsTranslations;
+
   final String? visualDiagramType; // e.g., "Samsara", "Karma", "Dharma", "Moksha", "Yoga", "Gunas"
-  final String deeperExplanation;
-  final List<String> keyPoints;
   final List<String> sources;
   final List<String> relatedTopics;
   final List<QuizQuestion> quizQuestions;
@@ -24,18 +27,26 @@ class Lesson {
     required this.level,
     required this.imageUrl,
     required this.imageCaption,
-    required this.englishContent,
-    required this.romanEnglishContent,
-    required this.simpleExplanation,
-    required this.example,
+    required this.titleTranslations,
+    required this.contentTranslations,
+    required this.simpleExplanationTranslations,
+    required this.exampleTranslations,
+    required this.deeperExplanationTranslations,
+    required this.keyPointsTranslations,
     this.visualDiagramType,
-    required this.deeperExplanation,
-    required this.keyPoints,
     required this.sources,
     required this.relatedTopics,
     required this.quizQuestions,
     required this.flashcards,
   });
+
+  // Getters to fall back to English if target is missing
+  String getLocalizedTitle(String lang) => titleTranslations[lang] ?? title;
+  String getLocalizedContent(String lang) => contentTranslations[lang] ?? contentTranslations['English'] ?? '';
+  String getLocalizedSimpleExplanation(String lang) => simpleExplanationTranslations[lang] ?? simpleExplanationTranslations['English'] ?? '';
+  String getLocalizedExample(String lang) => exampleTranslations[lang] ?? exampleTranslations['English'] ?? '';
+  String getLocalizedDeeperExplanation(String lang) => deeperExplanationTranslations[lang] ?? deeperExplanationTranslations['English'] ?? '';
+  List<String> getLocalizedKeyPoints(String lang) => keyPointsTranslations[lang] ?? keyPointsTranslations['English'] ?? [];
 }
 
 class Scripture {
@@ -43,9 +54,10 @@ class Scripture {
   final String title;
   final String type; // "Vedas", "Upanishads", "Gita", "Ramayana", "Mahabharata", "Puranas"
   final String imageUrl;
-  final String description;
+  final Map<String, String> titleTranslations;
+  final Map<String, String> descriptionTranslations;
   final List<String> themes;
-  final String importance;
+  final Map<String, String> importanceTranslations;
   final List<String> sources;
 
   Scripture({
@@ -53,11 +65,16 @@ class Scripture {
     required this.title,
     required this.type,
     required this.imageUrl,
-    required this.description,
+    required this.titleTranslations,
+    required this.descriptionTranslations,
     required this.themes,
-    required this.importance,
+    required this.importanceTranslations,
     required this.sources,
   });
+
+  String getLocalizedTitle(String lang) => titleTranslations[lang] ?? title;
+  String getLocalizedDescription(String lang) => descriptionTranslations[lang] ?? descriptionTranslations['English'] ?? '';
+  String getLocalizedImportance(String lang) => importanceTranslations[lang] ?? importanceTranslations['English'] ?? '';
 }
 
 enum QuizType {
@@ -71,10 +88,10 @@ class QuizQuestion {
   final String id;
   final String category;
   final QuizType type;
-  final String question;
-  final List<String> options; // for MCQ or Match
-  final String correctAnswer;
-  final String explanation;
+  final Map<String, String> questionTranslations;
+  final Map<String, List<String>> optionsTranslations;
+  final Map<String, String> correctAnswerTranslations;
+  final Map<String, String> explanationTranslations;
   final String difficulty; // "Beginner", "Intermediate", "Advanced"
   final String? relatedLessonId;
 
@@ -82,23 +99,28 @@ class QuizQuestion {
     required this.id,
     required this.category,
     required this.type,
-    required this.question,
-    required this.options,
-    required this.correctAnswer,
-    required this.explanation,
+    required this.questionTranslations,
+    required this.optionsTranslations,
+    required this.correctAnswerTranslations,
+    required this.explanationTranslations,
     required this.difficulty,
     this.relatedLessonId,
   });
+
+  String getLocalizedQuestion(String lang) => questionTranslations[lang] ?? questionTranslations['English'] ?? '';
+  List<String> getLocalizedOptions(String lang) => optionsTranslations[lang] ?? optionsTranslations['English'] ?? [];
+  String getLocalizedCorrectAnswer(String lang) => correctAnswerTranslations[lang] ?? correctAnswerTranslations['English'] ?? '';
+  String getLocalizedExplanation(String lang) => explanationTranslations[lang] ?? explanationTranslations['English'] ?? '';
 }
 
 class Flashcard {
   final String id;
   final String category;
   final String imageUrl;
-  final String front;
-  final String back;
-  final String explanation;
-  final String example;
+  final Map<String, String> frontTranslations;
+  final Map<String, String> backTranslations;
+  final Map<String, String> explanationTranslations;
+  final Map<String, String> exampleTranslations;
   final String relatedConcept;
   final String? relatedLessonId;
 
@@ -106,33 +128,39 @@ class Flashcard {
     required this.id,
     required this.category,
     required this.imageUrl,
-    required this.front,
-    required this.back,
-    required this.explanation,
-    required this.example,
+    required this.frontTranslations,
+    required this.backTranslations,
+    required this.explanationTranslations,
+    required this.exampleTranslations,
     required this.relatedConcept,
     this.relatedLessonId,
   });
+
+  String getLocalizedFront(String lang) => frontTranslations[lang] ?? frontTranslations['English'] ?? '';
+  String getLocalizedBack(String lang) => backTranslations[lang] ?? backTranslations['English'] ?? '';
+  String getLocalizedExplanation(String lang) => explanationTranslations[lang] ?? explanationTranslations['English'] ?? '';
+  String getLocalizedExample(String lang) => exampleTranslations[lang] ?? exampleTranslations['English'] ?? '';
 }
 
 class DictionaryEntry {
   final String term;
-  final String simpleDefinition;
-  final String romanEnglishDefinition;
-  final String detailedExplanation;
+  final Map<String, String> definitionTranslations;
+  final Map<String, String> detailedExplanationTranslations;
   final String relatedConcepts;
   final String relatedScripture;
   final String relatedLessonId;
 
   DictionaryEntry({
     required this.term,
-    required this.simpleDefinition,
-    required this.romanEnglishDefinition,
-    required this.detailedExplanation,
+    required this.definitionTranslations,
+    required this.detailedExplanationTranslations,
     required this.relatedConcepts,
     required this.relatedScripture,
     required this.relatedLessonId,
   });
+
+  String getLocalizedDefinition(String lang) => definitionTranslations[lang] ?? definitionTranslations['English'] ?? '';
+  String getLocalizedDetailedExplanation(String lang) => detailedExplanationTranslations[lang] ?? detailedExplanationTranslations['English'] ?? '';
 }
 
 class AppBadge {
@@ -206,7 +234,7 @@ class UserProgress {
 }
 
 class Settings {
-  final String language; // "English" or "Roman English"
+  final String language; // "English", "Roman English", "Urdu", "Sindhi"
   final String learningLevel; // "Beginner", "Intermediate", "Advanced"
   final double fontSize; // 14.0, 16.0, 18.0, 22.0
   final bool isDarkMode;

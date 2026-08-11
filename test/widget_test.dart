@@ -14,9 +14,9 @@ void main() {
     );
 
     // Should render the Splash Screen title initially
-    expect(find.text('Hindu Dharma Learning'), findsOneWidget);
+    expect(find.text('SANATAN PATH'), findsOneWidget);
 
     // Let the Future.delayed complete to prevent pending timer error
-    await tester.pump(const Duration(seconds: 2));
+    await tester.pump(const Duration(seconds: 4));
   });
 }

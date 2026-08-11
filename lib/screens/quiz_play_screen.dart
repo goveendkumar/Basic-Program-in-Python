@@ -24,14 +24,16 @@ class _QuizPlayScreenState extends State<QuizPlayScreen> {
     final appState = Provider.of<AppState>(context);
     final isDark = appState.settings.isDarkMode;
     final fontSize = appState.settings.fontSize;
+    final lang = appState.settings.language;
 
     final q = widget.questions[_currentIdx];
+    final options = q.getLocalizedOptions(lang);
 
     return Scaffold(
-      backgroundColor: isDark ? Colors.grey.shade900 : Colors.amber.shade50.withOpacity(0.3),
+      backgroundColor: isDark ? const Color(0xFF1E1E1E) : const Color(0xFFFFF9F0),
       appBar: AppBar(
         title: Text('${widget.category} Quiz 🏆'),
-        backgroundColor: Colors.orange.shade800,
+        backgroundColor: const Color(0xFF8B1A1A), // Deep Maroon
       ),
       body: SingleChildScrollView(
         child: Padding(
@@ -57,27 +59,27 @@ class _QuizPlayScreenState extends State<QuizPlayScreen> {
               LinearProgressIndicator(
                 value: (_currentIdx + 1) / widget.questions.length,
                 backgroundColor: Colors.grey.shade300,
-                valueColor: const AlwaysStoppedAnimation<Color>(Colors.orange),
+                valueColor: const AlwaysStoppedAnimation<Color>(Color(0xFFFF6B00)),
               ),
 
               const SizedBox(height: 24),
 
               // Question text
               Text(
-                q.question,
+                q.getLocalizedQuestion(lang),
                 style: TextStyle(fontSize: fontSize + 4, fontWeight: FontWeight.bold),
               ),
 
               const SizedBox(height: 20),
 
               // Options
-              ...List.generate(q.options.length, (idx) {
-                final opt = q.options[idx];
+              ...List.generate(options.length, (idx) {
+                final opt = options[idx];
                 Color cardColor = isDark ? Colors.grey.shade800 : Colors.white;
                 BorderSide border = BorderSide(color: Colors.grey.shade300);
 
                 if (_submitted) {
-                  if (opt == q.correctAnswer) {
+                  if (opt == q.getLocalizedCorrectAnswer(lang)) {
                     cardColor = Colors.green.shade100;
                     border = const BorderSide(color: Colors.green, width: 2);
                   } else if (_selectedIdx == idx) {
@@ -85,8 +87,8 @@ class _QuizPlayScreenState extends State<QuizPlayScreen> {
                     border = const BorderSide(color: Colors.red, width: 2);
                   }
                 } else if (_selectedIdx == idx) {
-                  cardColor = Colors.orange.shade50;
-                  border = const BorderSide(color: Colors.orange, width: 2);
+                  cardColor = const Color(0xFFFF6B00).withOpacity(0.1);
+                  border = const BorderSide(color: Color(0xFFFF6B00), width: 2);
                 }
 
                 return Padding(
@@ -132,20 +134,20 @@ class _QuizPlayScreenState extends State<QuizPlayScreen> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        _selectedIdx != null && q.options[_selectedIdx!] == q.correctAnswer
+                        _selectedIdx != null && options[_selectedIdx!] == q.getLocalizedCorrectAnswer(lang)
                             ? '✅ Correct Answer!'
                             : '❌ Incorrect Answer!',
                         style: TextStyle(
                           fontSize: fontSize + 1,
                           fontWeight: FontWeight.bold,
-                          color: _selectedIdx != null && q.options[_selectedIdx!] == q.correctAnswer
+                          color: _selectedIdx != null && options[_selectedIdx!] == q.getLocalizedCorrectAnswer(lang)
                               ? Colors.green.shade800
                               : Colors.red.shade800,
                         ),
                       ),
                       const SizedBox(height: 8),
                       Text(
-                        'Explanation: ${q.explanation}',
+                        'Explanation: ${q.getLocalizedExplanation(lang)}',
                         style: TextStyle(fontSize: fontSize - 1, color: Colors.black87),
                       ),
                     ],
@@ -160,14 +162,14 @@ class _QuizPlayScreenState extends State<QuizPlayScreen> {
                   onPressed: _selectedIdx == null
                       ? null
                       : () {
-                          final isCorrect = q.options[_selectedIdx!] == q.correctAnswer;
+                          final isCorrect = options[_selectedIdx!] == q.getLocalizedCorrectAnswer(lang);
                           setState(() {
                             _submitted = true;
                             if (isCorrect) _correctCount++;
                           });
                         },
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.orange.shade800,
+                    backgroundColor: const Color(0xFFFF6B00),
                     padding: const EdgeInsets.symmetric(vertical: 16),
                   ),
                   child: const Text('SUBMIT ANSWER', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
@@ -199,7 +201,7 @@ class _QuizPlayScreenState extends State<QuizPlayScreen> {
                     }
                   },
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.orange.shade800,
+                    backgroundColor: const Color(0xFFFF6B00),
                     padding: const EdgeInsets.symmetric(vertical: 16),
                   ),
                   child: Text(
@@ -229,7 +231,7 @@ class QuizResultScreen extends StatelessWidget {
     final bool passed = percent >= 0.7;
 
     return Scaffold(
-      backgroundColor: Colors.amber.shade50,
+      backgroundColor: const Color(0xFFFFF9F0),
       body: Center(
         child: Padding(
           padding: const EdgeInsets.all(24.0),
@@ -241,9 +243,9 @@ class QuizResultScreen extends StatelessWidget {
                 style: const TextStyle(fontSize: 80),
               ),
               const SizedBox(height: 24),
-              Text(
-                passed ? 'Congratulations!' : 'Keep Learning!',
-                style: const TextStyle(fontSize: 28, fontWeight: FontWeight.bold, color: Colors.brown),
+              const Text(
+                'Quiz Results',
+                style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold, color: Color(0xFF8B1A1A)),
               ),
               const SizedBox(height: 12),
               Text(
@@ -285,7 +287,7 @@ class QuizResultScreen extends StatelessWidget {
                     Navigator.pop(context);
                   },
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.orange.shade800,
+                    backgroundColor: const Color(0xFFFF6B00),
                     padding: const EdgeInsets.symmetric(vertical: 16),
                   ),
                   child: const Text('Back to Quizzes', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),

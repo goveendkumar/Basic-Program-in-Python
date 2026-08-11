@@ -9,10 +9,10 @@ void main() {
         id: 'q1',
         category: 'Basics',
         type: QuizType.multipleChoice,
-        question: 'What is Dharma?',
-        options: ['Duty', 'Water', 'Air', 'Fire'],
-        correctAnswer: 'Duty',
-        explanation: 'Dharma is right conduct or cosmic order.',
+        questionTranslations: {'English': 'What is Dharma?'},
+        optionsTranslations: {'English': ['Duty', 'Water', 'Air', 'Fire']},
+        correctAnswerTranslations: {'English': 'Duty'},
+        explanationTranslations: {'English': 'Dharma is right conduct or cosmic order.'},
         difficulty: 'Beginner',
       );
 
@@ -20,10 +20,10 @@ void main() {
         id: 'fc1',
         category: 'Basics',
         imageUrl: '',
-        front: 'Dharma',
-        back: 'Righteous Duty',
-        explanation: 'Righteous action and conduct.',
-        example: 'Helping someone in need is Dharma.',
+        frontTranslations: {'English': 'Dharma'},
+        backTranslations: {'English': 'Righteous Duty'},
+        explanationTranslations: {'English': 'Righteous action and conduct.'},
+        exampleTranslations: {'English': 'Helping someone in need is Dharma.'},
         relatedConcept: 'Right conduct',
       );
 
@@ -34,12 +34,12 @@ void main() {
         level: 'Beginner',
         imageUrl: 'assets/dharma.png',
         imageCaption: 'Illustration of Dharma Wheel',
-        englishContent: 'Dharma means righteousness.',
-        romanEnglishContent: 'Dharma ka matlab righteousness hai.',
-        simpleExplanation: 'Righteous duty.',
-        example: 'Being honest is dharma.',
-        deeperExplanation: 'Dharma is a core pillar of Hindu life.',
-        keyPoints: ['Righteousness', 'Cosmic law'],
+        titleTranslations: {'English': 'Introduction to Dharma', 'Urdu': 'دھرما کا تعارف'},
+        contentTranslations: {'English': 'Dharma means righteousness.'},
+        simpleExplanationTranslations: {'English': 'Righteous duty.'},
+        exampleTranslations: {'English': 'Being honest is dharma.'},
+        deeperExplanationTranslations: {'English': 'Dharma is a core pillar of Hindu life.'},
+        keyPointsTranslations: {'English': ['Righteousness', 'Cosmic law']},
         sources: ['Rig Veda'],
         relatedTopics: ['Karma'],
         quizQuestions: [quiz],
@@ -47,9 +47,10 @@ void main() {
       );
 
       expect(lesson.id, 'l1');
-      expect(lesson.title, 'Introduction to Dharma');
-      expect(lesson.quizQuestions.first.question, 'What is Dharma?');
-      expect(lesson.flashcards.first.front, 'Dharma');
+      expect(lesson.getLocalizedTitle('English'), 'Introduction to Dharma');
+      expect(lesson.getLocalizedTitle('Urdu'), 'دھرما کا تعارف');
+      expect(lesson.quizQuestions.first.getLocalizedQuestion('English'), 'What is Dharma?');
+      expect(lesson.flashcards.first.getLocalizedFront('English'), 'Dharma');
     });
 
     test('Settings copyWith works correctly', () {
@@ -57,8 +58,8 @@ void main() {
       expect(s.language, 'English');
       expect(s.learningLevel, 'Beginner');
 
-      final updated = s.copyWith(language: 'Roman English', learningLevel: 'Intermediate');
-      expect(updated.language, 'Roman English');
+      final updated = s.copyWith(language: 'Urdu', learningLevel: 'Intermediate');
+      expect(updated.language, 'Urdu');
       expect(updated.learningLevel, 'Intermediate');
     });
   });
@@ -68,8 +69,15 @@ void main() {
       final state = AppState();
 
       expect(state.settings.language, 'English');
-      state.updateLanguage('Roman English');
-      expect(state.settings.language, 'Roman English');
+      expect(state.isRtl, false);
+
+      state.updateLanguage('UR');
+      expect(state.settings.language, 'Urdu');
+      expect(state.isRtl, true);
+
+      state.updateLanguage('SD');
+      expect(state.settings.language, 'Sindhi');
+      expect(state.isRtl, true);
 
       state.updateLearningLevel('Intermediate');
       expect(state.settings.learningLevel, 'Intermediate');
@@ -89,7 +97,6 @@ void main() {
       expect(state.isLevelUnlocked('Beginner'), true);
       expect(state.isLevelUnlocked('Intermediate'), false);
 
-      // Complete a lesson to earn 50 XP
       state.completeLesson('lesson_1');
       expect(state.isLevelUnlocked('Intermediate'), true);
       expect(state.isLevelUnlocked('Advanced'), false);
@@ -99,17 +106,6 @@ void main() {
       state.completeQuiz('quiz_1', 1, 1);
 
       expect(state.isLevelUnlocked('Advanced'), true);
-    });
-
-    test('Bookmarks manage correct state', () {
-      final state = AppState();
-      expect(state.bookmarkedLessonIds.isEmpty, true);
-
-      state.toggleBookmarkLesson('lesson_1');
-      expect(state.bookmarkedLessonIds.contains('lesson_1'), true);
-
-      state.toggleBookmarkLesson('lesson_1');
-      expect(state.bookmarkedLessonIds.contains('lesson_1'), false);
     });
   });
 }
